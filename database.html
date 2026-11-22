@@ -1,0 +1,1713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project goat | DATABASE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 共通ヘッダー -->
+  <header class="site-header" data-header>
+   <div class="header-logo">
+        <img src="assets/project_goat_logo.svg">
+   </div>
+    <button class="menu-button" type="button" data-menu-button aria-label="メニューを開く"><span></span><span></span></button>
+    <nav class="site-nav" data-nav>
+      <a href="index.html">TOP</a>
+      <a href="news.html">NEWS</a>
+      <a class="is-current" href="database.html">DATABASE</a>
+      <a href="special.html">SPECIAL</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <div id="splash-square">
+    <div class="loader-square" aria-hidden="true">
+      <div class="loader-box-center"></div>
+      <div class="loader-box"></div>
+      <div class="loader-box"></div>
+      <div class="loader-box"></div>
+      <div class="loader-box"></div>
+    </div>
+  </div>
+    <!-- ==================================================
+      DATABASEページ
+      大カテゴリの切り替えはCSSで行い、アコーディオンはdetails/summaryで作っています。
+    =================================================== -->
+    <section class="section page-section database-page">
+      <div class="section-heading">
+        <h1>DATABASE</h1>
+        <p class="eyebrow">COMPOSITION LIBRARY</p>
+      </div>
+
+      <!-- 大カテゴリタブ。追加する場合は input / label / .db-panel を同じ番号で増やします。 -->
+      <div class="database-tabs">
+        <div class="corner-top-right"></div>
+        <input class="db-radio" type="radio" name="db-main" id="tab-nation" checked>
+        <input class="db-radio" type="radio" name="db-main" id="tab-characters">
+        <input class="db-radio" type="radio" name="db-main" id="tab-geography">
+        <input class="db-radio" type="radio" name="db-main" id="tab-armament">
+        <input class="db-radio" type="radio" name="db-main" id="tab-record">
+        <input class="db-radio" type="radio" name="db-main" id="tab-chronicle">
+        <input class="db-radio" type="radio" name="db-main" id="tab-words">
+
+        <div class="tab-labels" aria-label="database categories">
+          <label for="tab-nation">国家、勢力</label>
+          <label for="tab-characters">人物設定</label>
+          <label for="tab-geography">地理用語</label>
+          <label for="tab-armament">兵器、兵装</label>
+          <label for="tab-record">記録</label>
+          <label for="tab-chronicle">歴史</label>
+          <label for="tab-words">用語集</label>
+        </div>
+
+        <!-- ==================================================
+          NATION
+          国家資料。カテゴリチップとアコーディオン本文を編集します。
+        =================================================== -->
+        <section class="db-panel panel-nation">
+          <div class="archive-header">
+            <p class="eyebrow">NATION FILE</p>
+            <h2>NATION</h2>
+          </div>
+          <div class="sub-tabs">
+            <a href="#nation-a">REPUBLIC</a>
+            <a href="#nation-b">ALLIANCE</a>
+            <a href="#nation-c">INDEPENDENT</a>
+          </div>
+
+          <div class="map-accordion-layout">
+            <button class="int-map-mobile-toggle" type="button" data-int-map-open>MAP</button>
+            <aside class="int-map-shell" data-int-map>
+              <!--
+                int-map / NATION panel
+                n_map.pngを背景に、HTML内のアイコンボタンを座標指定で重ねています。
+                座標は --x と --y を%で調整します。
+              -->
+              <div class="int-map">
+                <button class="int-map-close" type="button" data-int-map-close aria-label="地図を閉じる">×</button>
+                <div class="int-map-toolbar" aria-label="map controls">
+                  <button type="button" data-map-zoom-out>−</button>
+                  <button type="button" data-map-zoom-reset>100%</button>
+                  <button type="button" data-map-zoom-in>＋</button>
+                </div>
+                <div class="int-map-scroll" data-map-scroll>
+                  <div class="int-map-canvas" data-map-canvas>
+                    <img src="assets/n_map.png" alt="interactive map background">
+                    <!-- icon 01: 丸 / NATIONの1番目のアコーディオン nation-map-01 にリンク -->
+                    <button class="map-icon map-icon-circle" type="button" data-map-point="point-ciel" data-map-panel="nation" data-map-target="nation-map-01" style="--x: 37%; --y: 38%;" aria-label="NATION icon 01"></button>
+                    <!-- icon 02: 三角 / NATIONの2番目のアコーディオン nation-map-02 にリンク -->
+                    <button class="map-icon map-icon-triangle" type="button" data-map-point="point-ulheria" data-map-panel="nation" data-map-target="nation-map-02" style="--x: 48%; --y: 34%;" aria-label="NATION icon 02"></button>
+                    <!-- icon 03: 四角 / NATIONの3番目のアコーディオン nation-map-03 にリンク -->
+                    <button class="map-icon map-icon-square" type="button" data-map-point="point-shemia" data-map-panel="nation" data-map-target="nation-map-03" style="--x: 62%; --y: 58%;" aria-label="NATION icon 03"></button>
+                    <!-- icon 04: 五角形 / GEOGRAPHYの1番目のアコーディオン geo-map-01 にリンク -->
+                    <button class="map-icon map-icon-pentagon" type="button" data-map-point="point-city" data-map-panel="geography" data-map-target="geo-map-01" style="--x: 35%; --y: 67%;" aria-label="GEOGRAPHY icon 01"></button>
+                    <!-- icon 05: 六角形 / GEOGRAPHYの3番目のアコーディオン geo-map-02 にリンク -->
+                    <button class="map-icon map-icon-hexagon" type="button" data-map-point="point-canopy" data-map-panel="geography" data-map-target="geo-map-02" style="--x: 72%; --y: 46%;" aria-label="GEOGRAPHY icon 02"></button>
+                    <button class="map-icon map-icon-4-1" type="button" data-map-point="point-ns-elensia" data-map-panel="geography" data-map-target="geo-map-03" style="--x: 25%; --y: 12%;" aria-label="GEOGRAPHY icon 03">
+                      <img src="assets/map_icon_4.1.svg">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          <div class="accordion-container">
+            <!-- accordion-contanierはaccordion-stackをうまく並べるための大枠です-->
+          
+          <div class="accordion-stack" id="nation-a" data-stack-title="REPUBLIC">
+            <details id="nation-map-01">
+              <summary>サテローダル組合</summary>
+              <div class="accordion-body">
+              <p>旧シエル連邦東部に存在するリガーレの一つ。フェルザー海峡以西の地域に強い影響力を持ち、特に多くの探査員を派遣して大陸各地のリガーレと連絡網を形成している。<br>
+                復興工事が進んでいるものの、慢性的な食料不足に陥っている。
+              </p>
+            </details>
+            <details>
+              <summary>カルパティア組合</summary>
+              <div class="accordion-body">
+                <p>
+                  旧シエル連邦中央部に存在するリガーレ。天蓋都市での生存圏の拡大を続けており、点在する拠点を利用したゲリラ的な戦術を広く採用しており、他のリガーレとは異なり戦闘に重点を置いている。<br>
+                  天蓋都市を経由した交通の支援も行っており、月に数度開かれるバザーでは常に物と貨幣が飛び交う。特に武器防具の品揃えが良い。
+                </p>
+              </div>
+            </details>
+            <details id="nation-map-03">
+              <summary>フレスランド</summary>
+              <div class="accordion-body">
+                <p>
+                  中央北沿岸部に存在するリガーレ。運送業が盛んで、沿岸部とエリシンジムを繋ぐ役割も担っている。
+                  物流や村落の支援に重点的に取り組んでおり、探査員や連絡員を派遣して物資の供給や人材の斡旋も行っている。<br>
+                  また、一部の戦闘員はアークトゥルスと共に巨王&quot;ミストレス&quot;の封印と保全を行っている。
+                </p>
+              </div>
+            </details>
+            <details id="nation-map-02">
+              <summary>ノーブルダル組合</summary>
+              <div class="accordion-body">
+                <p>
+                  大陸東部に存在するリガーレ。旧カレオンの人々が中心となって作り上げた。
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>キール共同体</summary>
+              <div class="accordion-body">
+                <p>
+                  ウルティモと旧シエルの境界地域付近に存在する自治組織。<br>
+                  シエル北部管区とウルティモ南西部に住んでいた人々で構成されており、カルパティア組合とウルティモの村落を結ぶ物流網の維持に大きく貢献している。
+                  職人による手編物の衣服が有名で、北部で活動する探査員や運送屋に人気が高い。
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>学術連盟</summary>
+              <div class="accordion-body">
+                <p>
+                  ノーブルダルに本部を置く学術機関。<br>
+                  研究発表の場ともなっており、様々な分野で日々議論が行われている。
+                  様々な学説に対しての見解などを発表することもあり、人々の生活に深く浸透している。
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>環中央商業連盟</summary>
+              <div class="accordion-body">
+                <p>
+                  中央海沿岸部を中心に、都市内の商業行為を監督する機構。<br>
+                  直接的に商業行為に関与することは少なく、規約違反を起こした組織に対しての行動制限や非常時の物資支援要請の伝達、取引先の仲介や監査などを行う。
+                  また保険機関や金融機関としての役割も担っており、やむを得ない事情で損害を受けた組織、融資を必要とする組織に対して規約に定められた範囲内で資金を提供する。
+                  金利はそれぞれのリガーレに従う。
+                </p>
+              </div>
+            </details>
+
+            <details>
+              <summary>ILHI</summary>
+              <div class="accordion-body">
+                <p>
+                  正式名称はInter-Ligament-Heavy-Industry。フラーレダル組合の近郊に本社を置く独立法人。<br>
+                  『大氾濫』で壊滅的な被害を受けたブルーフラックスを、当時のブルーフラックス代表のペトリ・ライニオが「全ての人々に家と暖炉を」を掲げて再建し作り上げた組織。
+                  前身であるブルーフラックスは兵器産業や都市建設事業に深く関わっていたが、こちらは主に復興支援として各地の都市機能の再生や多数の陸上艦を用いた大規模輸送業に取り組んでいる。
+                  大陸の隅まで物資を届け、どんなところにももう一度街を作るという姿勢が多くの人々に高く評価されている。
+                </p>
+              </div>
+            </details>
+          </div>
+           <div class="accordion-stack" id="nation-b" data-stack-title="ALLIANCE">
+            <details>
+              <summary>シエル連邦</summary>
+              <div class="accordion-body">
+              <p>大陸西部を広く支配していた連邦国家。『大氾濫』により崩壊。<br>
+                北部管区、西岸管区、東部管区、南部管区それぞれに存在する方面所管部を統括政府が取りまとめる形で行政を成立させ、北西部の大規模な&quot;遺産&quot;から得た技術力で大陸随一の工業国家として君臨していた。
+              西方過負荷領界から襲来する聖歌隊、地上に広がる壊晶汚染から逃れるため、天蓋都市を建造し生活基盤を移植した。その多くは『大氾濫』の際に汚染されたが、現在はカルパティア組合が維持と運用を行っている。
+
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>ウルヘリア</summary>
+              <div class="accordion-body">
+              <p>大陸東部沿岸に位置していた国家。『大氾濫』により滅亡。<br>
+                アノマリーに関する研究が盛んに行われたが、その成果の多くは戦術研究開発局に接収され軍事転用された。
+                大陸東部洋上に存在する&quot;遺産&quot;の一つ、境界壁の要塞化を行い、東方過負荷領界から襲来する融合体へ対抗していた。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>シェミア</summary>
+              <div class="accordion-body">
+              <p>大陸東岸に位置していた小国家。『大氾濫』により崩壊。<br>
+              国土のほとんどが山岳地帯で産業も乏しく、全大陸戦争でもそれらしい影響を受けなかった国家。隣国であるウルヘリア以外と直接の国交を結んだことはない。<br>
+              国土の中に半径20キロ程度の霧に覆われた未確認領域「虚」が存在する。開戦以前に国際調査隊が派遣されたこともあったが、全員行方不明になって以降正式な調査は行われていない。
+            </p>
+              </div>
+            </details>
+            <details>
+              <summary>ブエル連合</summary>
+              <div class="accordion-body">
+              <p>シエル連邦南部、カルディン山脈を越えた先のオーカーサンドランドに存在する国々の連合。過酷な自然環境に阻まれ、現状リガーレが辿り着けた事は無い。<br>
+              オーカーサンドランドは非常に乾燥しており、昼夜の温度差が激しい。また頻繫に壊晶を含んだ砂嵐が発生するため、人々は基本的に地下で生活している。
+              他の地域と隔絶されていた期間が長く、独特な文化様式と言語体系、哲学的理論を持つ。地理的に鉱物資源の入手難度が高く産業革命が起こらなかったことでも知られ、代わりにアーツが大きく発展している。
+              特筆するべきは彼等のアーツだ。ブエルでは布や紋章を活用した砂術と呼ばれる独自のアーツ体系が発展しており、特に流体、粒体の操作に秀でている。
+              文明の方向性の違いから彼等は前時代的、原始的と揶揄される事が多いが、アーツに関してはほかの大陸諸国を凌駕している。けして忘れないように。
+              </p>
+            </div>
+            </details>
+            <details>
+              <summary>ウルティモ帝国</summary>
+              <div class="accordion-body">
+              <p>大陸の北方地域を広く支配する帝政国家。『大氾濫』により崩壊。<br>
+              過酷な凍原を治める軍事国家。皇帝と議会による立憲君主制を採用し、優れた統治を行っていた。巨王&quot;ミストレス&quot;の封印と保全に注力しており、全大陸戦争でも唯一正規部隊が戦闘を行わなかった国家でもある。
+              『大氾濫』による被害も比較的少なく、復興も街単位で迅速に進んだ。ただし食料や燃料の備蓄が破壊された村落では凍死者、餓死者が大量に発生した。<br>
+              鉱物資源が豊富であり、貴金属や壊晶が多く採掘される。圧晶発電技術が開発される以前から壊晶の燃料利用が行われており、凍原を掘り返せば過去に凄まじい数の侵蝕が発生していたことが分かる。
+              『大氾濫』の際に発生した大量のバリアントと断層によって連絡網が断絶しており、今も街単位での自治が続いている。
+            </p>
+              </div>
+            </details>
+            <details>
+              <summary>カレオン</summary>
+              <div class="accordion-body">
+              <p>旧大陸平和機構参加国の一つ。中央海東側の内陸部に位置する資源国家。『大氾濫』により崩壊。<br>
+            </p>
+              </div>
+            </details>
+            <details>
+              <summary>モヴィニア</summary>
+              <div class="accordion-body">
+              <p>かつて現在のカレオンとシェミアの中間の地域に存在し、中央海沿岸部を中心に広く勢力圏を持っていた巨大国家。
+                その遠征軍は現在のシエル北部まで到達した記録が残っており、文字通り大陸の全てにその名が語り継がれている。<br>
+                その最後は結託した諸国軍との<button class="term" type="button" data-note="ウルティモのアークトゥルス、カレオンの聖燭三軍、遠くオグバニアからはレオニドも参戦した大会戦。詳細は記録の「五鐘伐戦」の項を参照。">壮絶な戦闘</button>の末、
+            </p>
+              </div>
+            </details>
+          </div>
+          <div class="accordion-stack" id="nation-c" data-stack-title="FORCES">
+            <details>
+              <summary>埿土 / シュリーモル</summary>
+              <div class="accordion-body">
+              <p>
+                カルパティア組合が運用している装脚戦車部隊の俗称。<br>
+                使用している機体のカタログスペックは優秀だが、軍用装脚戦車の部品は製造が難しいためあり合わせで何とかしている状態。
+                武装も強力な火砲は弾薬の供給が万全ではなく、サボットと瓦礫を用いた簡易的な弾薬を使用している機体が多くみられる。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>アークトゥルス</summary>
+              <div class="accordion-body">
+              <p>
+                ウルティモが運用していた精鋭部隊。<br>
+                槍型のアーツユニットを用いて戦闘する特術歩兵で構成され、雪中戦や遊撃戦を得意とする。<br>
+                一人ひとりが高い戦闘能力を持つだけでなく、指揮方面の能力も高水準で備えている超人集団。
+                その本分は巨王&quot;ハルファス&quot;の封印と保全であり、他国との戦闘を行うことは少ない。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>聖燭</summary>
+              <div class="accordion-body">
+              <p>
+                カレオンが運用していた主力軍。<br>
+                一軍から四軍まで存在し、それぞれが独立して行動することでも知られる。
+                総じて士気が高く、高い機動力を活かした側面破壊や正面突破を得意とする。機械化術技兵を基本に陸上艦を多く備えており、周辺諸国に対する強い抑止力として機能していた。<br>
+                大規模な戦闘の前に特有の蠟燭と音を用いたアーツを使用する。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>中隊</summary>
+              <div class="accordion-body">
+              <p>
+                旧ウルヘリアの市街を占拠、駐留している武装勢力。
+                極めて排外的で、外部の人間を発見次第攻撃する。ただし都市外郭から二つ目の大型隔壁までは侵入を黙認しているようだ。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>第60特務連隊-第3戦闘中隊</summary>
+              <div class="accordion-body">
+              <p>
+                通称「貸出中隊」。ウルへリアが大陸平和機構に派遣軍として運用権の一部を委譲した特務戦闘中隊であり、特に開けた野戦と殲滅戦を得意とする。
+	              『大氾濫』の際に壊滅した。
+              </p>
+              </div>
+            </details>
+            
+          </div>
+          </div>
+          </div>
+        </section>
+
+        <!-- ==================================================
+          CHARACTERS
+          PCは矢印リンク、モバイルは横スワイプでプロフィールを切り替えます。
+          立ち絵はクリック/タップで前面と背面が切り替わります。
+        =================================================== -->
+        <section class="db-panel panel-characters">
+          <div class="archive-header">
+            <p class="eyebrow">PERSONNEL FILE</p>
+            <h2>CHARACTERS</h2>
+          </div>
+          <div class="profile-carousel" aria-label="character profiles">
+            <article class="profile-card" id="profile-ruin">
+              <a class="profile-arrow prev" href="#profile-crow" aria-label="前の人物">‹</a>
+              <div class="flip-portrait">
+                <input type="checkbox" id="flip-ruin">
+                <label for="flip-ruin">
+                  <img class="front" src="assets/ruin_front.png" alt="Ruin 前面立ち絵">
+                  <img class="back" src="assets/ruin_back.png" alt="Ruin 背面立ち絵">
+                </label>
+              </div>
+              <div class="profile-copy">
+                <p class="eyebrow">ARTS CASTER / LEADER</p>
+                <h3>ルイン</h3>
+                <dl>
+                  <dt>性別</dt><dd>女</dd>
+                  <dt>所属</dt><dd>スクアッド</dd>
+                </dl>
+                <p>廃墟で目覚めた少女。自らの過去を探し、旅を始める。<br>2つの角笛を用いて、それぞれ系統の違うアーツを扱うことが可能である。</p>
+               <div class="accordion-container">
+                <div class="accordion-stack">
+                 <details>
+                  <summary>基礎資料　-01</summary>
+                 <div class="accordion-body">
+              <p>
+                ルインは優れたアーツ適性を持つ術師だ。彼女に関する情報はサテローダル組合の人事部に保存され、クラス４の機密指定を受ける。資料請求の際は必ず原印による割印を施した様式-３の書簡を持参すること。<br>
+                =====<br>
+              ルインは優れたアーツ適正と強力な固有術式を有しており、野戦において高い適性を持つ。
+              彼女はアーツさえ習熟すれば一般的な探査員よりも圧倒的に強いが、彼女に尊敬や畏怖といった感情を抱く者は少ない。むしろ、親しみを少し超えてハラスメントぎりぎりの行為すら受ける始末である。
+              これは彼女の争いを好まない穏やかな性格と、そのやや幼い挙動が周囲の認識を歪めてしまっているためだ。後にアルフィーと「巡礼」に出るまでの2か月間、彼女はずっとマスコット扱いだった。<br>
+              彼女の知識欲は凄まじい。記憶喪失が発覚してから社会規範や地理、歴史などに非常に強い好奇心を示した後、組合内の公開できる限りの資料の全てを僅か1週間で読破してしまったほどである。<br>
+              =====<br>
+              余談だが、ルインが手書きのメモを渡してきた時は注意したほうが良い。大抵ろくでもないアーツが仕込まれている。
+            </p>
+                 </div>
+                 </details>
+                                  <details>
+                  <summary>基礎資料　-02</summary>
+                 <div class="accordion-body">
+              <p>
+                ルインの固有術式には謎が多い。もとより固有術式とはヒトの脳が密接に関わるため現代のアーツ理論でも未解明部分が多いのだが、彼女のものは特に不可解だ。<br>
+                まず、彼女はアーツユニットを介さずに固有術式を行使できる。アーツユニット────彼女の場合は二つの角笛がこれにあたる────を使用する場合と比較すると精度の低下が有意に認められるが、手笛、指笛、その他管楽器をアーツユニットとして代用できるのだ。<br>
+                次にアーツ造物に関してだが、彼女の術式が生み出す造物は…異質だ。本来アーツで召喚する被造物は、単純な命令しか認識できない木偶の坊のようなものだ。その上負荷が凄まじく、何体も召喚すれば脳が煮崩れてしまう。
+                しかし彼女のアーツに関しては一瞬ではあるが3体を同時に召喚し、あまつさえ自律行動をしているように見える。<br>
+                ばかげている。現代の壊晶応用工学の粋を凝らした精密機械よりも角笛ごときが優れているだと？<br>
+                ────しかし…あの光環さえもアーツの一部なのだろうか？
+              </p>
+                 </div>
+                 </details>
+                                  <details>
+                  <summary>基礎資料　-03</summary>
+                 <div class="accordion-body">
+              <p>
+                ルインはサテローダル周辺のアンカーレンジ内で、黒い繭のようなものにくるまれた状態発見された。
+                  発見当初既に自身に関する記憶を失っており、それゆえか知識欲が高い。
+                  検査のために拘束されていた一週間で組合内の資料や教本の類を読みつくしてしまい、監視役の戦闘員に機密資料をねだった話は有名である。
+              </p>
+                 </div>
+                 </details>
+                                  <details>
+                  <summary>権限記録</summary>
+                 <div class="accordion-body">
+              <p>生来より固有術式を持った者は、それ以外の者と一線を画す。これは決して越えられない壁だ。
+                どれほど幼少からアーツに親しもうと、優れた頭脳で術式を考案しても、それらは「天賦の才」とやらに易々と追い抜かされる。<br>
+                それらはある意味当然のことだ。山を登る獣が鳥に追いつける道理が無いように、もとより異なるものが敵う道理は無い。<br>
+                どうしても追いつきたいのなら────────自らを変容させる他ない。
+              </p>
+                 </div>
+                 </details>
+                <details>
+                  <summary>ひとかけらの瀞</summary>
+                 <div class="accordion-body">
+              <p>「これは御守り。肌身離さないようにね」<br>
+                ルインのアーツによって発生した瀞を封じ込めた小瓶。彼女はこれを投げ割ることでアーツの高速発動を行うことができる。
+              </p>
+                 </div>
+                 </details>
+                 </div>
+              </div>
+              
+
+              </div>
+              <a class="profile-arrow next" href="#profile-alfirk" aria-label="次の人物">›</a>
+            </article>
+
+            <article class="profile-card" id="profile-alfirk">
+              <a class="profile-arrow prev" href="#profile-ruin" aria-label="前の人物">‹</a>
+              <div class="flip-portrait">
+                <input type="checkbox" id="flip-alfirk">
+                <label for="flip-alfirk">
+                  <img class="front" src="assets/alfirk_front.png" alt="Alfirk 前面立ち絵">
+                  <img class="back" src="assets/alfirk_back.png" alt="Alfirk 背面立ち絵">
+                </label>
+              </div>
+              <div class="profile-copy">
+                <p class="eyebrow">ASSAILANT / AIDE</p>
+                <h3>アルフィー</h3>
+                <dl>
+                  <dt>性別</dt><dd>男</dd>
+                  <dt>所属</dt><dd>サテローダル組合</dd>
+                </dl>
+                <p>サテローダル組合所属、遼遠探査員。現実的な視点と豊富な経験、高い戦闘能力を持つ。</p>
+
+                <div class="accordion-container">
+                <div class="accordion-stack">
+                 <details>
+                  <summary>基礎資料　-01</summary>
+                 <div class="accordion-body">
+              <p>
+                本名はフィン="ライスター"=アルフィルク。ライスターは組合内のコードネームである。サテローダル組合に所属する遼遠探査員であり、機動防御を前提とした近接戦闘において高い実力を持つ。<br>
+                =====<br>
+                見える限りの身体は全て機械的な義肢で構成されており、およそ肉体と呼べる部分は見当たらない。彼はあまり気にしていないようだが、その外見と現実主義的な性格も相まって組合の中では様々な噂話が盛り上がった。
+                その内容は「"遺産"から生まれた守護兵」「実はエイリアンが遣わした先鋒」「シエルの生み出した戦闘機械」など様々だが、彼はそのすべてに肯定も否定も示していない。<br>
+            </p>
+                 </div>
+                 </details>
+                                  <details>
+                  <summary>基礎資料　-02</summary>
+                 <div class="accordion-body">
+              <p>
+                アルフィーは過剰に思える程多種多様な武器を携行している。現に一回の探査ですべての装備を使用することは少ないのだが、彼は万が一に備えて常に予備武装
+              </p>
+                 </div>
+                 </details>
+                 <details>
+                  <summary>基礎資料　-03</summary>
+                 <div class="accordion-body">
+              <p>
+                彼はコミュニケーションの方法を偏って覚えただけのお人好しだ。
+              </p>
+                 </div>
+                 </details>
+                                  <details>
+                  <summary>権限記録</summary>
+                 <div class="accordion-body">
+              <p>---記録開始---<br>
+                第二次擬似神経接続手術開始。<br>
+                
+                =====<br>
+                h210からr059まで接続成功。<br>
+
+                ---記録終了---
+              </p>
+                 </div>
+                 </details>
+                                  <details>
+                  <summary>新しい筆跡</summary>
+                 <div class="accordion-body">
+              <p>「アルフィー、その膝のプロテクターって意味あるの？その下義体じゃん」<br>
+                「…習慣だ」
+              </p>
+                 </div>
+                 </details>
+                 </div>
+              </div>
+
+
+              </div>
+              <a class="profile-arrow next" href="#profile-rat" aria-label="次の人物">></a>
+            </article>
+
+            <article class="profile-card" id="profile-rat">
+              <a class="profile-arrow prev" href="#profile-alfirk" aria-label="前の人物"><</a>
+              <div class="flip-portrait">
+                <input type="checkbox" id="flip-rat">
+                <label for="flip-rat">
+                  <img class="front" src="assets/rat_front.png" alt="rat 前面立ち絵">
+                  <img class="back" src="assets/rat_back.png" alt="rat 背面立ち絵">
+                </label>
+              </div>
+              <div class="profile-copy">
+                <p class="eyebrow">ARTILLERY / MERCENARY</p>
+                <h3>ラッツ</h3>
+                <dl>
+                  <dt>性別</dt><dd>女</dd>
+                  <dt>所属</dt><dd>カルパティア組合</dd>
+                </dl>
+                <p>優れた狩人。ケーティと一緒に後方からの火力支援を得意とする。
+                </p>
+
+                <div class="accordion-container">
+                <div class="accordion-stack">
+                  <details>
+                    <summary>基礎資料　-01</summary>
+                    <div class="accordion-body">
+                    <p>
+                      ラッツは急性褶曲障害の発症者だ。彼女に発現した鳥の形態は、右頬から始まり袈裟にかかるように彼女の左腕を呑み込んでいる。<br>
+                      医師は常々彼女に壊晶との接触を避けるように指示しているが、彼女の行動が改善されたことはない。
+                    </p>
+                   </div>
+                 </details>
+                 <details>
+                   <summary>基礎資料　-02</summary>
+                   <div class="accordion-body">
+                    <p>
+                      『大氾濫』によって不可逆的な障害を抱えた者は少なくない。あの未曾有の大災害は我々から文化、生活、人生を根こそぎ攫って行ってしまった。<br>
+                    </p>
+                   </div>
+                 </details>
+                 <details>
+                   <summary>基礎資料　-03</summary>
+                   <div class="accordion-body">
+                   <p>
+                      彼女の父は狩人だった。珍妙な武器を背負って荒野に赴き、獣を狩る。彼の帰る場所はいつだってあの荒野の真ん中だった。
+                   </p>
+                   </div>
+                 </details>
+                 <details>
+                   <summary>権限記録</summary>
+                   <div class="accordion-body">
+                   <p>
+                    発現率9.28%。
+                   </p>
+                   </div>
+                 </details>
+                 <details>
+                   <summary>鳥</summary>
+                   <div class="accordion-body">
+                   <p>
+                    弾は貴重だからね
+                   </p>
+                   </div>
+                 </details>
+                 </div>
+              </div>
+
+              </div>
+              <a class="profile-arrow next" href="#profile-lena" aria-label="次の人物">></a>
+            </article>
+          </div>
+        </section>
+
+        <!-- GEOGRAPHY -->
+        <section class="db-panel panel-geography">
+          <div class="archive-header"><p class="eyebrow">TOPOS</p><h2>GEOGRAPHY</h2></div>
+          <div class="sub-tabs">
+            <a href="#area-a">STRUCTURE</a>
+            <a href="#area-b">NATIVE</a>
+            <a href="#area-c">HETERO SPACE</a>
+          </div>
+          
+          <div class="map-accordion-layout">
+            <button class="int-map-mobile-toggle" type="button" data-int-map-open>MAP</button>
+            <aside class="int-map-shell" data-int-map>
+              <!--
+                int-map / GEOGRAPHY panel
+                このパネルではGEOGRAPHYに紐づくアイコンだけが黄色、NATIONに紐づくアイコンはグレーになります。
+              -->
+              <div class="int-map">
+                <button class="int-map-close" type="button" data-int-map-close aria-label="地図を閉じる">×</button>
+                <div class="int-map-toolbar" aria-label="map controls">
+                  <button type="button" data-map-zoom-out>−</button>
+                  <button type="button" data-map-zoom-reset>100%</button>
+                  <button type="button" data-map-zoom-in>＋</button>
+                </div>
+                <div class="int-map-scroll" data-map-scroll>
+                  <div class="int-map-canvas" data-map-canvas>
+                    <img src="assets/n_map.png" alt="interactive map background">
+                    
+                    <!-- icon 04: 五角形 / GEOGRAPHYの1番目のアコーディオン geo-map-01 にリンク -->
+                    <button class="map-icon map-icon-pentagon" type="button" data-map-point="point-city" data-map-panel="geography" data-map-target="geo-map-01" style="--x: 35%; --y: 67%;" aria-label="GEOGRAPHY icon 01"></button>
+                    <!-- icon 05: 六角形 / GEOGRAPHYの3番目のアコーディオン geo-map-02 にリンク -->
+                    <button class="map-icon map-icon-hexagon" type="button" data-map-point="point-canopy" data-map-panel="geography" data-map-target="geo-map-02" style="--x: 72%; --y: 46%;" aria-label="GEOGRAPHY icon 02"></button>
+                    <button class="map-icon map-icon-4-1" type="button" data-map-point="point-ns-elensia" data-map-panel="geography" data-map-target="geo-map-03" style="--x: 25%; --y: 12%;" aria-label="GEOGRAPHY icon 03">
+                      <img src="assets/map_icon_4.1.svg">
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          <div class="accordion-container">
+          <div class="accordion-stack" id="area-a" data-stack-title="STRUCTURE">
+            <details id="geo-map-03">
+              <summary>北西遺構</summary>
+              <div class="accordion-body">
+              <p>
+                シエル連邦北西に存在する巨大な&quot;遺産&quot;。未知の技術がふんだんに使われており、シエル連邦はここから取得した精錬技術や応用壊晶技術を天蓋都市に用いている。
+                またシエル連邦はここから得た技術や情報の多くを秘匿しており、当時大陸諸国から強い批判を受けていた。<br>
+                現在はカルパティア組合とキール共同体が厳重に封鎖している。
+              </p>
+            </div>
+            </details>
+            <details id="geo-map-01">
+              <summary>境界壁</summary>
+              <div class="accordion-body">
+              <p>
+                大陸東部の沖合に存在する長大な壁。&quot;遺産&quot;の一つだと考えられているが、特にオーバーテクノロジーが眠っているわけではない。<br>
+                ウルヘリアが管理を行い、要塞化改修を施されて融合体の脅威に対する防衛線として用いられてきた。それ以外は特に何もない。
+              </p>
+            </div>
+            </details>
+            <details id="geo-map-02">
+              <summary>&quot;一本橋&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                フェルザー海峡を横断する一本の白い橋。装脚車両の車列が通行できる程度の道幅を持ち、大陸西部と東部を繋ぐ交通の要衝である。<br>
+                フェルザー海峡の両岸を真っ直ぐに繋いでおり、やや非合理的な形状をしている。
+                全大陸戦争末期に建造されたと考えられるが、当時の状況で何故こんなにもきれいな一本橋がかけられたかは疑問である。
+              </p>
+            </div>
+          </details>
+            <details><summary>天蓋都市</summary>
+              <div class="accordion-body">
+              <p>
+                シエル連邦全土に広く普及していた空中都市構造を指す。<br>
+                一定間隔で打設された巨大な中心柱に居住、生産、発電などを担うプラットフォーム群が連結されることで生活を可能にしていた。
+                一般に天蓋都市同士は貨物連絡橋梁で連結されているが、一部地域では大型プラットフォームで連結することで複数の天蓋都市を一つの大規模都市圏として機能させていた。<br>
+                =====<br>
+                現在は『大氾濫』の影響により多くの都市が機能を停止しており、バリアント、聖歌隊の巣窟になっている。カルパティア組合が率先して都市区画の奪還と生存圏の拡大を試みている。
+              </p>
+            </div>
+            </details>
+          </div>
+          <div class="accordion-stack" id="area-b" data-stack-title="NATIVE">
+            <details>
+              <summary>中央海</summary>
+              <div class="accordion-body">
+              <p>
+                大陸中央部に存在する海洋。
+                かつての天地を分かつ戦いの痕だとされているが詳細は不明。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>フェルザー海峡</summary>
+              <div class="accordion-body">
+              <p>
+                大陸の中央南部に存在する海峡。
+                流れが激しく、船では渡れない。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>カルディン山脈</summary>
+              <div class="accordion-body">
+              <p>
+                旧シエル連邦支配地域の南に位置する大山脈。
+                極めて急峻な山々が連なる、壊晶に侵されない極寒と神秘の地。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>ゼファリア山脈</summary>
+              <div class="accordion-body">
+              <p>
+                中央海の北東に位置する大山脈。
+                鉱産資源が豊富で、特に鉄鉱石と純粋壊晶が採掘できる。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>フェローモル山脈</summary>
+              <div class="accordion-body">
+              <p>
+                大陸東部に位置する山脈。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>オーカーサンドランド</summary>
+              <div class="accordion-body">
+              <p>
+                ブエルに広がる広大な砂漠。
+                非常に乾燥しており、壊晶を含んだ砂嵐が頻繫に発生する。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>エリシンジム</summary>
+              <div class="accordion-body">
+              <p>
+                大陸北部に広がる広大な凍土。
+                厳しい寒さにより人もアノマリーも少なく、自然環境との戦いになる。
+                エリシンジムを越えた「最北の地」には巨王&quot;ミストレス&quot;が封印されており、周囲100km単位でアークトゥルス、フレスランド第一機動旅団、第三機械旅団、第四施設旅団が共同で封鎖している。
+              </p>
+              </div>
+            </details>
+          </div>
+          <div class="accordion-stack" id="area-c" data-stack-title="HETERO SPACE">
+            <details>
+              <summary>過負荷領界</summary>
+              <div class="accordion-body">
+              <p>大陸の東方、西方、南方にそれぞれ存在する未知の領域。壊晶濃度が非常に高く、アノマリーの巣窟である。<br>
+                境界壁を越えた先の沖合に広がる東方過負荷領界には巨王ゲベートとその分化子体である融合体達、シエル連邦の沖合の先に広がる西方過負荷領界には巨王ハルファスとその分化子体である聖歌隊が存在し、探査を阻んでいる。<br>
+                ブエル連合のさらに南部、シートンランドを覆う南方過負荷領界には特に敵対的なアノマリーは少ないが、その代わりに全域が極度にプランク値が高い。
+                仮想座標観測錨無しでは侵入は自殺行為だといえる。
+              </p>
+              </div>
+            </details>
+          </div>
+          </div>
+          </div>
+        </section>
+
+        <!-- ARMAMENT -->
+        <section class="db-panel panel-armament">
+          <div class="archive-header"><p class="eyebrow">EQUIPMENT FILE</p><h2>ARMAMENT</h2></div>
+          <div class="sub-tabs"><a href="#weapon-a">HAND WEAPON</a><a href="#weapon-b">ARTS UNIT</a><a href="#weapon-c">DEVICE</a><a href="#weapon-d">ARMED THINGS</a></div>
+          <div class="accordion-container">
+           <div class="accordion-stack" id="weapon-a" data-stack-title="HAND WEAPON">
+            <details><summary>衝撃装置</summary>
+              <div class="accordion-body">
+              <p>
+                シエル連邦第三技術研究局で開発された壊晶兵装の一つ。
+                精製壊晶の穂先を持った長柄の武器で、対人、対アノマリー、対機甲どれにも極めて強い効果を発揮する。
+                対象に刺してから装填されたケーシングアーツを使用する事で、理論上どの様なアノマリーでも撃破可能である。
+                ただしケーシングアーツのカードリッジは入手がほぼ不可能であるため、使用するタイミングは慎重に判断する必要がある。
+              </p>
+            </div>
+            </details>
+            <details><summary>ナイロンザイル</summary>
+              <div class="accordion-body">
+              <p>
+                十分な強度があれば、縄でさえ立派な武器なのだ。
+                カウボーイごっこから荷造りまで、なんでもござれ。
+              </p>
+            </div>
+            </details>
+            <details><summary>特製釘打機</summary>
+              <div class="accordion-body">
+              <p>
+                アルフィーが愛用しているネイルガン。<br>
+                パレットで固化させた壊晶の「釘」をピストンで打ち出す、汎用型条約違反兵装。
+                ただし現状オキュラス＝フレデリック協定に批准している国家は存在しないため、咎められる者もいない。
+                命中精度は悪いが、近距離で高い殺傷能力を持つ。
+                全大陸戦争末期にアルフィーの親友が設計、製作した一点もの。彼は一日たりとも整備を怠った事が無い。
+              </p>
+            </div>
+            </details>
+            <details><summary>直刀</summary>
+              <div class="accordion-body">
+              <p>
+                アルフィーが常に腰に帯びている一振りの直刀。<br>
+                加圧式壊晶兵装であり、対人、対アノマリーに高い効果を発揮する。
+                
+              </p>
+            </div>
+            </details>
+            <details><summary>コンバージェンスライフル</summary>
+              <div class="accordion-body">
+              <p>ウルティモ帝国が正式採用していた壊晶兵装。現代には珍しい遠距離兵装で、アーツ防護を貫通する特性を持つ。
+                有効射程720m、推奨交戦距離550mの長射程を誇り、ウルティモの野戦部隊に広く用いられた。
+              </p>
+            </div>
+            </details>
+           </div>
+
+           <div class="accordion-stack" id="weapon-b" data-stack-title="ARTS UNIT">
+            <details><summary>MARO-T</summary>
+              <div class="accordion-body">
+              <p>
+                レガント工業が開発した民間向け小型アーツユニット。<br>
+                誰にでも扱いやすいように調整されており、幾つかの複合術式がプリインストールされている。出力は平凡だが、その耐久性を求めて愛用する者は多い。
+              </p>
+            </div>
+            </details>
+            <details><summary>CAU-21メトシーノ</summary>
+              <div class="accordion-body">
+              <p>
+                ブルーフラックスが開発した建設業者向け中型アーツユニット。<br>
+                土木工事、測量用の術式に最適化されており、良好な出力と高い安定性を備えている。
+              </p>
+            </div>
+            </details>
+            <details><summary>Type4</summary>
+              <div class="accordion-body">
+              <p>
+                シエル連邦が正式採用していた軍用中型アーツユニット。<br>
+                複合術式を同時に5スロット装填できるため、突然の接敵にも迅速に対応できる。
+              </p>
+            </div>
+            </details>
+            <details><summary>これはHAND WEAPONの四番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはHAND WEAPONの四番目の項目の本文です。関連する人物や事件を記載します。</p>
+            </div>
+            </details>
+           </div>
+
+           <div class="accordion-stack" id="weapon-c" data-stack-title="OLD WEAPON">
+            <details><summary>ハミングシェル</summary>
+              <div class="accordion-body">
+              <p>
+                旧ハルシュが開発し、大陸平和機構が運用した大量破壊兵器。
+                複数のレッドライトの連鎖崩壊反応から起爆力を抽出し、活性侵蝕を伴う大規模な爆発を起こす。
+                かつて旧シエルに対して1発が使用され、天蓋都市3基を崩壊させた。
+              </p>
+            </div>
+            </details>
+            <details><summary>ARMAS</summary>
+              <div class="accordion-body">
+              <p>
+                ノーブルダル東に建設された大型固定砲台。
+                軌道帯に
+              </p>
+            </div>
+            </details>
+            <details><summary>これはHAND WEAPONの三番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはHAND WEAPONの三番目の項目の本文です。物語上の意味や象徴性を記載します。</p>
+            </div>
+            </details>
+           </div>
+
+           <div class="accordion-stack" id="weapon-d" data-stack-title="ARMED THINGS">
+            <details><summary>エンデ級工廠艦</summary>
+              <div class="accordion-body">
+              <p>
+                ノーブルダル組合が運用している旧型陸上艦。旗艦のバスティオ、二番艦のデラード、三番艦のレマー、四番艦のデュールが存在する。<br>
+                『大氾濫』以前は聖燭二軍に所属し、前線に様々な物資を供給していた。
+              </p>
+            </div>
+            </details>
+            <details><summary>ベルドランチェ</summary>
+              <div class="accordion-body">
+              <p>
+                要修正。
+                つよい装脚戦車。
+              </p>
+            </div>
+            </details>
+            <details><summary>これはHAND WEAPONの三番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはHAND WEAPONの三番目の項目の本文です。物語上の意味や象徴性を記載します。</p>
+            </div>
+            </details>
+           </div>
+          </div>
+        </section>
+
+        <!-- RECORD -->
+        <section class="db-panel panel-record">
+          <div class="archive-header"><p class="eyebrow">RECOVERED LOG</p><h2>RECORD</h2></div>
+          <div class="sub-tabs"><a href="#record-a">VOICE</a><a href="#record-b">BLACK BOX</a><a href="#record-c">REPORT</a></div>
+          <div class="accordion-container">
+          <div class="accordion-stack" id="record-a" data-stack-title="VOICE">
+            <details>
+              <summary>壊れかけの軍用レコーダー</summary>
+              <div class="accordion-body">
+              <p>---記録開始---<br>
+              私は死にかけている。今まさに、この瞬間に。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの二番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの二番目の項目の本文です。報告書や解析結果を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの三番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの三番目の項目の本文です。欠落しているデータや矛盾点を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの四番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの四番目の項目の本文です。関連するミッションや人物を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの五番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの五番目の項目の本文です。プレイヤーが発見する順番などを記載します。</p>
+              </div>
+            </details>
+            </div>
+            <div class="accordion-stack" id="record-b" data-stack-title="BLACK BOX">
+            <details>
+              <summary>これはb</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの一番目の項目の本文です。音声ログや回収地点の説明を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの二番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの二番目の項目の本文です。報告書や解析結果を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの三番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの三番目の項目の本文です。欠落しているデータや矛盾点を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの四番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの四番目の項目の本文です。関連するミッションや人物を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの五番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの五番目の項目の本文です。プレイヤーが発見する順番などを記載します。</p>
+              </div>
+            </details>
+            </div>
+            <div class="accordion-stack" id="record-c" data-stack-title="REPORT">
+            <details>
+              <summary>きれいな機密文書</summary>
+              <div class="accordion-body">
+              <p>きれいに保管されていた機密文書ファイル。折り目がくたびれており、持ち主が何度も開き直した事が分かる。<br>
+              =====<br>
+              ────探査員志願者、ルインは精密検査の結果、スワンプマンに該当する可能性が高い事が判明した。彼女の強力なアーツと類稀な戦闘技術を加味して、遼遠探査員のアルフィーにこれの執行監督を任命する。<br>
+                任務期間は進捗に応じて自動的に延長され、成果報告はこの通達後目標の存在が検知されないことによってのみ行われる。
+            </p>
+              </div>
+            </details>
+            <details>
+              <summary>暗号化された未知の記録</summary>
+              <div class="accordion-body">
+              <p>
+                ではデニー、先ほどの議題に戻ろう。
+                <br>「『空』とは何か」だ。
+                <br>…学術的な観点から見れば、地上から見上げた時に頭上に広がる空間です。実際には半球状ですが、人々の認識ではより扁平な形として捉えられます。
+                <br>そして時事的な話題を加味した場合、『かれら』がやってきた未知の領域を指します。あの空間の裂け目は今も塞がっておらず、3回に渡って向かった調査隊は34名全員が未帰還です。
+                <br>ニュースキャスターなら完璧な回答だ。さて、君の予想はどうだ？
+                <br>…情報が足りませんが、ワームホールの類でしょうか。いくつか疑問点が生じるのであまり自信がありませんが。
+                <br>言ってみろ。
+                <br>(6秒間の沈黙)
+                <br>まず、ワームホールの類ならば形状がおかしいです。3次元空間の穴ならばそれは球状、少なくとも立体に開くはずですが、あれは平面です。
+                <br>つまり空間を捻じ曲げて2地点間をつなげた訳ではないと推測できます。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの三番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの三番目の項目の本文です。欠落しているデータや矛盾点を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの四番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの四番目の項目の本文です。関連するミッションや人物を記載します。</p>
+              </div>
+            </details>
+            <details>
+              <summary>これはRECORDの五番目の項目のsummaryです</summary>
+              <div class="accordion-body">
+              <p>これはRECORDの五番目の項目の本文です。プレイヤーが発見する順番などを記載します。</p>
+              </div>
+            </details>
+          </div>
+          </div>
+        </section>
+
+        <!-- ==================================================
+          CHRONICLE
+          地図と年表。注釈は class="term" と data-note を付けるとクリックで表示されます。
+        =================================================== -->
+        <section class="db-panel panel-chronicle">
+          <div class="archive-header"><p class="eyebrow">HISTORY / GEOGRAPHY</p><h2>CHRONICLE</h2></div>
+          <div class="chronicle-layout">
+            <div class="chronicle-map-slot">
+              <button class="int-map-mobile-toggle" type="button" data-int-map-open>MAP</button>
+              <aside class="int-map-shell" data-int-map>
+                <!--
+                  int-map / CHRONICLE panel
+                  既存のfigure地図を置き換えた地図です。
+                  NATION/GEOGRAPHYのアコーディオンに飛ぶ参照用なので、CHRONICLE選択中は全アイコンがグレー表示になります。
+                -->
+                <div class="int-map">
+                  <button class="int-map-close" type="button" data-int-map-close aria-label="地図を閉じる">×</button>
+                  <div class="int-map-toolbar" aria-label="map controls">
+                    <button type="button" data-map-zoom-out>−</button>
+                    <button type="button" data-map-zoom-reset>100%</button>
+                    <button type="button" data-map-zoom-in>＋</button>
+                  </div>
+                  <div class="int-map-scroll" data-map-scroll>
+                    <div class="int-map-canvas" data-map-canvas>
+                      <img src="assets/n_map.png" alt="interactive map background">
+                      <!-- icon 01: 丸 / NATIONの1番目のアコーディオン nation-map-01 にリンク -->
+                      <button class="map-icon map-icon-circle" type="button" data-map-point="point-ciel" data-map-panel="nation" data-map-target="nation-map-01" style="--x: 24%; --y: 42%;" aria-label="NATION icon 01"></button>
+                      <!-- icon 02: 三角 / NATIONの2番目のアコーディオン nation-map-02 にリンク -->
+                      <button class="map-icon map-icon-triangle" type="button" data-map-point="point-ulheria" data-map-panel="nation" data-map-target="nation-map-02" style="--x: 48%; --y: 34%;" aria-label="NATION icon 02"></button>
+                      <!-- icon 03: 四角 / NATIONの3番目のアコーディオン nation-map-03 にリンク -->
+                      <button class="map-icon map-icon-square" type="button" data-map-point="point-shemia" data-map-panel="nation" data-map-target="nation-map-03" style="--x: 62%; --y: 58%;" aria-label="NATION icon 03"></button>
+                      <!-- icon 04: 五角形 / GEOGRAPHYの1番目のアコーディオン geo-map-01 にリンク -->
+                      <button class="map-icon map-icon-pentagon" type="button" data-map-point="point-city" data-map-panel="geography" data-map-target="geo-map-01" style="--x: 35%; --y: 67%;" aria-label="GEOGRAPHY icon 01"></button>
+                      <!-- icon 05: 六角形 / GEOGRAPHYの3番目のアコーディオン geo-map-02 にリンク -->
+                      <button class="map-icon map-icon-hexagon" type="button" data-map-point="point-canopy" data-map-panel="geography" data-map-target="geo-map-02" style="--x: 72%; --y: 46%;" aria-label="GEOGRAPHY icon 02"></button>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+            <div class="timeline">
+              <article>
+                <time>～4061</time>
+                <p>現存記録不足。詳細不明。要修正。</p>
+              </article>
+              <article>
+                <time>5934</time>
+                <p>シエル連邦成立。天蓋都市構想開始。</p>
+              </article>
+              <article>
+                <time>5983</time>
+                <p>境界壁の改修開始。巨王&quot;ゲベート&quot;の2秒間の観測に成功。<button class="term" type="button" data-note="変異体を指す">バリアント</button>という単語をクリック、タップすると注釈が添えられます。</p>
+              </article>
+              <article>
+                <time>6102</time>
+                <p>シエル連邦北西部の&quot;遺産&quot;一部の解析に成功。壊晶の軍事利用が開始。</p>
+              </article>
+              <article>
+                <time>6256</time>
+                <p>「現代アーツ学」初版刊行。</p>
+              </article>
+              <article>
+                <time>6282</time>
+                <p>オキュラス=フレデリック協定が48ヶ国間で締結される。境界壁の改修が完了。</p>
+              </article>
+              <article>
+                <time>6347</time>
+                <p>シエル全土に天蓋都市が普及。</p>
+              </article>
+              <article>
+                <time>6379</time>
+                <p>シェミアの「虚」内部に調査隊が進入。以後行方不明。</p>
+              </article>
+              <article>
+                <time>6385</time>
+                <p>ハルシュ、シエル間で戦端が開かれる。全大陸戦争開戦。</p>
+              </article>
+              <article>
+                <time>6401</time>
+                <p>大陸平均壊晶濃度が15mg/m³を超える。アノマリーの活性化が認められる。</p>
+              </article>
+              <article>
+                <time>6417</time>
+                <p>ウルヘリアが人工アノマリーの実戦投入を開始。</p>
+              </article>
+              <article>
+                <time>6454</time>
+                <p>ブエル連合内に巨王&quot;プレイグ&quot;が顕現。ゼフトアが滅亡。巨王&quot;ハイウォーカー&quot;の討伐に成功。</p>
+              </article>
+              <article>
+                <time>6488</time>
+                <p>新型アノマリーが発生。ブエル連合内の居住可能地域の2割喪失。</p>
+              </article>
+              <article>
+                <time>6505</time>
+                <p>大陸平和機構発足。ウルティモ＝シエル不可侵条約締結。</p>
+              </article>
+              <article>
+                <time>6538</time>
+                <p>大陸平和機構が大量破壊兵器を使用。シエル東部管区内の天蓋都市を3基喪失。</p>
+              </article>
+              <article>
+                <time>6593</time>
+                <p>『大氾濫』発生。大陸の全人口の6割が死亡。1割がバリアントに転化する。</p>
+              </article>
+
+              <article>
+                <time>6629</time>
+                <p>ルインが目覚める。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORDS -->
+        <section class="db-panel panel-words">
+          <div class="archive-header"><p class="eyebrow">GLOSSARY</p><h2>WORDS</h2></div>
+          <div class="sub-tabs"><a href="#words-a">TECH</a><a href="#words-b">WORLD VIEW</a><a href="#words-c">SLANG</a><a href="#words-d">ANOMALY</a></div>
+          <div class="accordion-container">
+          <div class="accordion-stack" id="words-a" data-stack-title="TECH">
+            <details>
+              <summary>壊晶 / フラグライト</summary>
+              <div class="accordion-body">
+              <p>現代の社会において欠かせない物質。現代の材料工学、軍事工学、建築学や工業化学、生体工学などの幅広い分野に活用されており、その風土的影響は大きい。<br>
+              正式名称はフラグライト(Fragrite)であり、古くから人々の生活に深く浸透している。その風土的影響は大きく、一部の地域では天然壊晶をパワーストーンとしてお守りにする風習がある。
+              しかし近現代に入り、壊晶との継続的な接触が褶曲障害を引き起こす恐れがあると判明して以降、壊晶の取扱いには細心の注意が求められるようになった。
+              アーツの応用技術によって、非常に高い効率でエネルギーを取り出せるようになった現代では主に燃料資源としての利用が一般的である。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>侵蝕</summary>
+              <div class="accordion-body">
+              <p>
+              壊晶は臨界濃度に達した時や固形物に付着した場合に<span>侵蝕</span>を引き起こす。これは壊晶がエネルギーを放出しながら周囲の物質を自らに置換する現象であり、構造的に同一の物体に伝播する特性を持つ。<br>
+              活性壊晶が引き起こす侵蝕は爆発的に拡大するため活性侵蝕と呼ばれ、不活性壊晶が周囲の物質に対して起こす侵蝕は恒常侵蝕と呼ばれる。
+              活性侵蝕は急激に拡大するが発生する壊晶は低純度のものとなるため、産業用途でも利用は困難である。
+              恒常侵蝕は拡大速度がとても緩やかであり、1m³拡大するのに数百年の年月を要する代わりに純度の高い壊晶を生み出す。
+              大規模な侵蝕が発生した場合、その地域は高濃度の残留結晶によって<span>汚染</span>される。このような壊晶汚染地帯は除染が非常に困難であり、『大氾濫』時に汚染された地域に未だ回復の兆しが見えないこともこれに起因する。<br>
+              侵蝕が発生する際のエネルギーを取り出して発電を行う技術を<span>圧晶発電</span>といい、通常の転換炉よりも高く安定した出力と、燃料を問わない性質を持つ。
+              しかし現代の技術では実現できておらず、一部の&quot;遺産&quot;でのみ可能である。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>融晶</summary>
+              <div class="accordion-body">
+              <p>
+                壊晶の持つ形態の一つ。壊晶が大気中に細かい流体として存在している状態を指す。<br>
+                基本的には人が吸い込んでもそこに含まれる壊晶は極々微量であるため問題ないが、体内に蓄積された壊晶は自然に排出されないため、継続的に融晶濃度が高い空間で生活していると褶曲障害を引き起こす可能性がある。<br>
+                融晶は地上から高度1800～3000mに集まり分厚い雲を形成する性質がある。これを<span>白融雲層</span>といい、内部は高い融晶濃度によって常に活性侵蝕が発生している。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>融晶場</summary>
+              <div class="accordion-body">
+              <p>
+                融晶が存在し、その影響が及ぶ空間を指す。『現代壊晶理論』で初めて用いられた。<br>
+                アノマリーの存在やアーツの使用、侵蝕の発生など様々な要因によって融晶場に「波」が発生する。
+                RFF検出器はこの波を検出して解析することでアノマリーの存在や付近での戦闘を検知することができ、探査員や連絡員には欠かせない装備品となっている。<br>
+                高いアーツ適性を持ったものはこの融晶場の動きを感じ取れると言われているが、真偽は不明。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>融晶濃度</summary>
+              <div class="accordion-body">
+              <p>融晶の濃度を示す値。大気中壊晶濃度とも。単位はg/ｍ³。アノマリーや断層の周辺、侵蝕の跡地では高い数値が測定される事が多い。<br>
+                数値が高いほどアーツの大気減衰が低下するが、適切な防護装備なしでは壊晶中毒や褶曲障害を引き起こす恐れがある。また融晶濃度が極端に高い環境では侵蝕が自然発生するリスクが高まるため、探査員は常に気を配る必要がある。</p>
+              </div>
+            </details>
+            <details>
+              <summary>プランク値</summary>
+              <div class="accordion-body">
+              <p>空間の歪度を示す値。単位はhg。0で全く歪んでいない状態を示し、数値が増加する程空間が歪んでいることを示す。<br>
+                一般的に0.13～0.2までが人間が許容できる空間歪度だとされ、それを超えると様々な健康被害が発生する。0.5では急性褶曲障害を発症し、0.7では恒久的な運動機能の喪失、1.2に達すると人間は即死する。<br>
+                概ね融晶濃度と比例して上昇する傾向があり、壊晶との関連性について研究が進められている。</p>
+              </div>
+            </details>
+            <details>
+              <summary>褶曲障害</summary>
+              <div class="accordion-body">
+                <p>歪曲した空間や壊晶によって引き起こされる健康障害。急性のものと慢性のものが存在する。<br>
+                  軽度であれば感覚障害程度で済むが、悪化するにつれて四肢の麻痺や遺伝子障害、形態異常などが発生する。壊晶との接触、高プランク値の空間への滞在で症状が進行するため、発症した場合は壊晶と触れないように気を付ける必要がある。
+                  症状が進行し続けるとバリアントに転化するとされているが、はっきりと確認した事例は存在しない。
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>アーツ</summary>
+              <div class="accordion-body">
+                <p>正式名称をフラグライトアーツと呼び、融晶を媒体として物質に干渉し、様々なエネルギーを変換、放出する技術を指す。地域によって異なる体系のアーツが普及していることがあるが、その基本的な語義は変わらない。
+                  融晶濃度によって効果に大小の差異が見られ、融晶濃度が極端に低い場合は発動しないことが知られている。ヒトの脳と密接に関係していることは判明しているが、メカニズムに関しては不明な点が多い。<br>
+                  =====<br>
+                  アーツは生来の各個人の適正によってその効果が大きく変動し、この適性を<span>アーツ適性</span>と呼ぶ。
+                  アーツ適性の高さはアーツの行使に関して様々な面で影響を及ぼす。アーツ適性の高さと<span>固有術式</span>の有無が術師には重要な素質となる。<br>
+                  アーツを行使する際、脳は高い負荷を受ける。
+                  過度に負荷の大きい術式の行使や適切な休息を取らない状態での連続行使を強行すると、脳出血やタンパク質の変性を引き起こす恐れがある。<br>
+                  =====<br>
+                  アーツの発動にはアーツユニットと術式が必要となる。術式は<span>原基術式</span>、<span>複合術式</span>、<span>固有術式</span>に大別され、それぞれの特徴を持つ。<br>
+                  原基術式は、他の術式と比較して最も単純で負荷が小さく、効果もシンプルである。その分効果が個人のアーツ適性に大きく左右され、初心者がアーツ適性を簡易的に把握する指標として用いる事がある。<br>
+                  <br>
+                  複合術式は、原基術式を複数組み合わせた最も一般的な術式である。効果や負荷が術式の構成の影響を大きく受け、複雑な構成になるほどより強力な効果を得やすいが誤術のリスクや負荷が増加する。
+                  組み合わせる原基術式の数を術式の複雑さの指標とし、ｎ項式と数える。<br>
+                  <br>
+                  固有術式は一部のヒトやアノマリーが持っているオリジナルの術式である。それぞれ独特な効果を持ち、負荷も小さい傾向にある。
+                  非常に多様な効果を発揮する一方、そのメカニズムは完全にブラックボックスであり解析や再現に成功した例は存在しない。
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>アーツ=派生</summary>
+              <div class="accordion-body">
+                <p>
+                  アーツにも系統が存在し、現代まで続くアーツ系の多くは古式描画系から派生したものである。<br>
+                  平面上に描いた特定の図画を術式として扱う<span>描画系アーツ</span>は現存する最古のアーツであり、初心者も気軽に行使することができる。
+                  ただし図画の精度がそのまま術式の質として表れるため誤術のリスクや出力のブレがひどく、また負荷は小さいが複雑な術式を扱おうとすると非現実的なサイズの図画を要する。
+                  総じて非効率的で、現在は一部地域で儀礼的に用いられるのみである。<br>
+                  アーツユニットで複合術式を構築する方式は<span>機械系アーツ</span>と呼ばれ、大陸各国に広く普及している。
+                  主な特徴として術式を回路として扱うために安定性が高く、技術の共有や同一の術式の安定した行使が可能である。代わりに負荷は比較的高い。<br>
+                  ブエルの<span>砂術</span>は古式描画系の色が強く残った非機械的アーツであり、流体の制御と「あいまいな術式」を得意とする。
+                  個人の感性が強く影響するため各々が自分のスタイルを確立しており、体系的な理論が存在しない事も大きな特徴である。
+                </p>
+              </div>
+            </details>
+            <details>
+              <summary>異層空間</summary>
+              <div class="accordion-body">
+              <p>原層空間と定義される我々が生活している3次元空間に対して、壊晶によって啓開された未知の空間を指す。<br>
+                「空間」と呼称されるが、3次元空間とは異なる座標系で定義されておりその法則は未解明。断層面から離れるにつれ距離、方向、位置といった概念が通用しなくなる為、仮想座標観測錨のない状態での進入は推奨されない。
+                深部まで探査に向かった者は帰ってこなかった為に詳細は不明だが、異層空間には階層（チャンネル）が存在する事が判明している。<br>
+                同チャンネル内に存在する異層空間は繋がっていると考えられているが、未だ仮説段階である。</p>
+              </div>
+            </details>
+            <details>
+              <summary>断層 / フォルテージ</summary>
+              <div class="accordion-body">
+              <p>壊晶によって褶曲した空間が耐え切れずに剪断された状態をさす。断層面に対して平行に観測する事で目視可能大規模な断層では異層空間に進入できる場合がある。小規模なもので数百m、大規模なものでは数百kmに達する。
+                異層空間に進入せずに断層面を通り抜けることは不可能であり、交通の要衝に発生した場合物流に甚大な被害が発生する。<br>
+                仮想座標観測錨陣によって閉じることができるが、途方もない数の観測錨を必要とする為実際に閉じた例は少ない。<br>
+                断層からアノマリーが出現した事例が数件報告されているが、特別な処置が行われた記録は存在しない。</p>
+              </div>
+            </details>
+            <details>
+              <summary>仮想座標観測錨 / プレーン・アンカー</summary>
+              <div class="accordion-body">
+              <p>異層空間において、座標系を3次元空間に同期させる空間安定化装置。一基では効果が薄いが、複数基を陣のように配置して同期稼働させることで安定空間を形成することが可能。座標が流動しているとでも言うべき異層空間では、これがなければ生存すら不可能である。<br>
+                原層空間でも異層空間と同様に安定空間の形成が可能であり、主に断層の修復に用いられていた。<br>
+                『大氾濫』によって技術が失われている。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>壊晶兵装</summary>
+              <div class="accordion-body">
+              <p>
+                壊晶を用いた兵器、兵装の総称。
+                そのほとんどがオキュラス=フレデリック協定に違反しており、極めて危険な代物であることには留意する必要がある。
+                内訳としては近接兵装が多く、低含有合金に融晶を加圧浸透させることで表面に融晶の薄膜を発生させ対象を切断する方式が一般的。
+                当然ながら対人用途ではバリアントを発生させるリスクも孕んでいるため、使用に関しては慎重な判断が求められる。
+              </p>
+              </div>
+            </details>
+            
+            <details>
+              <summary>低含有合金</summary>
+              <div class="accordion-body">
+              <p>
+                微量の壊晶を混入させた合金。
+                その組成や冷却過程などにより差異がみられるが、総じて活性侵蝕を受け流す性質を持つ。
+                ただし大規模な侵蝕には無力であり、またアーツに対しては通常の鋼鉄よりも弱いため注意が必要。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>識別子</summary>
+              <div class="accordion-body">
+              <p>
+                リガーレの構成員に着用が義務付けられる識別用の支給タグ、または規定に従ったサイズのラベル。<br>
+                特定のアーツを当てることでフラクタルパターンが浮かび上がる。製造には特殊なアーツと高度な印刷技術が要求されるため、偽造は極めて困難。
+                主に身元確認に用いられる。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>RFF検出器</summary>
+              <div class="accordion-body">
+              <p>
+                融晶場の動きを検出して解析することでアノマリーの存在や付近での戦闘を検知することができる機器。探査員や連絡員には欠かせない装備品。
+                都市や陸上艦に搭載するような大型のものからポケットサイズのものまで豊かなバリエーションがある。
+              </p>
+              </div>
+            </details>
+          </div>
+          <div class="accordion-stack" id="words-b" data-stack-title="WORLD VIEW">
+            <details><summary>リガーレ</summary>
+              <div class="accordion-body">
+              <p>
+                『大氾濫』後に誕生した、国家に替わりうる組織。
+                文明の復興と失った土地の奪還を掲げて都市の再建や物流の復活などに各々力を入れている。
+              </p>
+            </div>
+            </details>
+            <details><summary>都市</summary>
+              <div class="accordion-body">
+              <p>
+                人々の暮らす場所であり、文明と安全を保証する空間。
+                主に環融炉と防衛設備、陸上艦との積み下ろし能力、そしてアノマリーからの襲撃に耐えうる堅牢さが求められる。<br>
+                『大氾濫』までは天井のない掘り下げただけの地下に都市を建造し、拡張する際は下方向に掘削する方式が一般的だったが、現在は旧市街を再利用して上方向に増築工事を行うことが多い。
+              </p>
+            </div>
+            </details>
+            <details><summary>デポ</summary>
+              <div class="accordion-body">
+              <p>
+                荒野の中で度々見られる移動式簡易拠点、または物資集積所。<br>
+                リガーレや運送屋が物資を共同で保管しておき、汎券と引き換えに分け与える方式を採っており、どちらかと言えばリガーレが仲介をする新古品店と言うほうが正しい。
+                また規模の大きいものは宿屋や機械屋、精機屋も店を構えていることがあり、荒野の中の村のような位置づけになっている。
+                リガーレの戦闘員が警備を担当しており、アノマリーや山賊の襲撃に備えて頻繫に場所を変更する性質がある。
+                最近は改造した陸上艦をデポとして運用しているところもあるそうだ。
+              </p>
+            </div>
+            </details>
+            <details><summary>運送屋 / キャラバン</summary>
+              <div class="accordion-body">
+              <p>
+                装脚車両などを用いて都市間で物資の輸送を行い、それによって生計を立てる者を指す。<br>
+                リガーレの一種とみなされることもあるが、こちらは実態さえ伴っていれば誰でも名乗ることができる。その入り口の広さゆえに盗賊行為を働くものが後を絶たず、社会的な信頼度は比較的低い。
+              </p>
+            </div>
+            </details>
+            <details><summary>回収屋 / サッコ</summary>
+              <div class="accordion-body">
+              <p>
+                装脚車両などを用いて廃都市などから物資の回収を行う者を指す。<br>
+                しばしば運送屋と混同されるが、こちらはあくまで回収が専門であり長距離の輸送は不得手であることに留意する必要がある。
+                多くの場合は戦闘後の跡地から追い剝ぎのような形で物資を都市に回収する。そのため戦闘を行うことは少ないが、自衛のための武力は備えている。
+              </p>
+            </div>
+            </details>
+            </details>
+            <details><summary>機械屋 / </summary>
+              <div class="accordion-body">
+              <p>
+                機械に関するスペシャリスト。リガーレの中で武器の制作や改造を主に請け負っている。
+              </p>
+            </div>
+            </details>
+            <details><summary>傭兵</summary>
+              <div class="accordion-body">
+              <p>
+                金や物資と引き換えに武力を提供する者を指す。<br>
+                戦闘員は非常に強力な武力の形だが、リガーレの決定がなければ武力行使は許されない。そのためこうした柔軟に展開できる戦力の需要は多く、運送屋や権力者を中心に広く利用されている。
+              </p>
+            </div>
+            </details>
+            <details><summary>連絡員 / イーピストラ</summary>
+              <div class="accordion-body">
+              <p>
+                リガーレ内の役職の一つであり、リガーレ間の連絡を担う。<br>
+                文書の配送、各地の情勢の伝達が主な仕事で、単独又は少人数で行動する。野外生存術はもちろんだが、その性質上山賊などに標的にされることも多いため、様々な交渉術や万が一のための戦闘技術も求められる。
+              </p>
+            </div>
+            </details>
+            <details><summary>戦闘員 / ガード</summary>
+              <div class="accordion-body">
+              <p>
+                リガーレ内の役職の一つであり、リガーレ支配地域の防衛を担う。<br>
+                アノマリーの撃退や賊の排除など、対外的な武力行使を行うリガーレの主戦力。軍隊的な規律を重んじ、30人程度の小隊規模で行動することが多い。
+                ただ、近年ではアノマリーよりも人間を相手取ることが多いようだ。
+                アーツの制御技術か近接戦闘術のどちらかを備えていることが必要。また隊長には別個に指揮能力や人事管理能力など多岐に渡る能力が求められる。
+              </p>
+            </div>
+            </details>
+            <details><summary>探査員 / プローブ</summary>
+              <div class="accordion-body">
+              <p>
+                リガーレ内の役職の一つであり、生存領域外の探査を担う。<br>
+                安全の確認が取れていない地域に足を運び、汚染規模の確認や脅威の排除を行う。万が一の被害規模を最小限にするため、その行動は6名以下の分隊規模に制限される。
+                連絡員とは異なり戦闘を前提とした長期活動を行うため、戦闘用具に圧迫され荷物に余裕がない。そのため身につける装備品や持ち運ぶ食糧の量は慎重に決定しなければならず、出動の度に探査員達は頭を悩ませている。<br>
+                危機管理能力と戦闘能力、戦術的な判断力を始めとして高い能力が求められるが、実は多くのリガーレでは探査員になるだけなら大した試験もなく簡単に受任できる。
+                ただしそうやって探査員になった者の多くは訓練を経たとしても初戦闘で命を落としてしまうため、殉職率は高い。
+              </p>
+            </div>
+            </details>
+            <details>
+              <summary>陸上艦</summary>
+              <div class="accordion-body">
+              <p>
+                危険な荒野を越えてヒトとモノが行き来する為に、人々が作り出した移動手段の形。<br>
+                概ね、巨大な無限軌道を用いて移動する。旋回や速度の変更は非常に緩慢なものとなってしまうため、運用には地形や天候、周辺勢力の情勢などの様々な情報が不可欠である。
+                単独での長期間活動を実現するために独立した生活環境を有しており、乗組員用の大量の備蓄に加え食料プラントや浄水器といった設備も備えている。<br>
+                その目的によって<button class="term" type="button" data-note="高速艦、貨物艦、強襲艦、工廠艦など。詳細は用語集の「陸上艦の区分」を参照。">区分がいくつかに分かれる</button>が、そのどれであっても所有する勢力の権威と資金力の証明になる。
+                私有するには莫大な資金と人材が必要となるが、それでも多くの運送屋にとって自分の陸上艦を持つことは大きな憧れである。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>陸上艦の区分</summary>
+              <div class="accordion-body">
+              <p>
+                陸上艦はその目的に応じて大きく6個の区分に分けられる。また陸上艦に関してはその用途や所属に左右されずすべてを艦と呼称する。<br>
+                高速艦
+                探査艦
+                貨物艦
+                強襲艦
+                工廠艦
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>装脚車両</summary>
+              <div class="accordion-body">
+              <p>
+                陸上艦より少し以前に誕生した歩行する車両。
+                侵蝕や壊晶を忌避する馬などに替わる移動手段として開発され、高い登攀性能と壊晶汚染に対する耐性を持つ。<br>
+                全大陸戦争では無人化された装脚車両が猛威を振るった。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>廃棄戦車 / シュロス</summary>
+              <div class="accordion-body">
+              <p>
+                旧シエル連邦支配地域で見られる自立稼働する装脚戦車。<br>
+                非常に堅牢な装甲と駆動系を持ち、携行火器や生半可なアーツでは撃破は困難。<br>
+                検知した生体全てを未確認脅威とみなすが、積極的に攻撃を行う機体は少ないため発見した際は可能な限り刺激しないよう離脱する事が推奨されている。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>火砲</summary>
+              <div class="accordion-body">
+              <p>
+                アーツが発見されてから、火砲に関する技術は発展を停止した。<br>
+                小さな飛翔体の運動エネルギーではアーツ防壁を突破できず、人にもアノマリーにも有効打となりえないことからアーツの浸透と共に携行火器はその姿を消し、一部の地域で害獣駆除に用いられるのみである。<br>
+                しかし依然としてアーツ防壁で覆いきれないような構造物に対しては大口径砲による攻撃が有効であり、火砲は攻城兵器としての側面を強く持っている。<br>
+                全大陸戦争以前においては、火砲も都市、陣地攻撃用に用いられるのみであった。しかし、オキュラス＝フレデリック協定が形骸化した戦争中期以降に壊晶を用いた特殊弾頭が開発されたことをきっかけに、火砲の価値が見直され始めた。
+                特に融晶場に影響を受けずに遠距離を攻撃可能である点と、訓練を積むことで個々人のアーツ適性に左右されずに安定した火力を供給できる点が評価され、現在は都市だけでなく陸上艦や装脚車両にも火砲が搭載されている事が少なくない。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>戦争</summary>
+              <div class="accordion-body">
+              <p>
+                戦争にも歴史が存在する。
+                アーツが戦いに使われ始めて久しいが、戦争の形態は対して変わっていない。<br>
+                アーツユニットと複合術式の普及によって生半可な投擲武器ではアーツ防壁を突破できなくなり、主な殺傷手段は棍棒や剣による近接攻撃、アーツによる術攻撃、アーツ防護を無視できるほどのエネルギーによる攻撃に限定された。
+                これにより必然的に白兵戦が主流となり、火砲による火力制圧はコストパフォーマンスの面から少なくなっていった。<br>
+                陸上艦の登場以後は戦線に効果的に火力を提供できるようになったが、陸上艦同士がお互いを高脅威目標と認識して砲撃戦をする下で歩兵部隊が殴り合うということも珍しくなくなった。
+                しかし全大陸戦争後期に壊晶兵装が登場して以降は遠距離武器も増えたため、戦場はアーツと剣だけのものでは無くなっている。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>オーロラ</summary>
+              <div class="accordion-body">
+              <p>
+                極光とも呼ばれるこの光は、プランク値の高い場所に発生する現象の一つである。<br>
+                &quot;遺産&quot;の古い書物や口伝の中では天体の高緯度帯に出現する発光現象だとされているが、現代においては融晶濃度とプランク値が両方高いことを示す危険指標の一つである。
+                主に緑から紫の短波長の可視光と紫外線を放出し、微弱な融晶場の乱れを起こす。
+                オーロラが観測された場合は警戒を怠らず、速やかに防護措置を取ること。
+              </p>
+              </div>
+            </details>
+
+          </div>
+          <div class="accordion-stack" id="words-c" data-stack-title="SLANG">
+            <details>
+              <summary>『大氾濫』</summary>
+              <div class="accordion-body">
+              <p>
+                改暦6593年春に起きた大陸規模の大災害を指す。<br>
+                その内訳は主に3種に大別され、「濁潮」と呼ばれる黒い活性侵蝕と、それに付随して顕現した「黒い山羊」のアノマリー、そして各地敵性アノマリーの急激な活性化が同時多発的に発生した。
+                これによって多くの都市がその機能を失い、人々は既存の技術体系も社会基盤も、知識さえ喪ってしまった。
+                また人口も『大氾濫』の前後で約1割弱まで落ち込み、各種の産業もそのノウハウの多くが受け継がれることなく消えてしまった。管理の届かない市街区は武装集団の隠れ家にもなっている。
+                特に壊晶の先端応用技術は再現が難しく、仮想座標観測錨やARDなど多くの技術がロストテクノロジー化している。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>「空」</summary>
+              <div class="accordion-body">
+              <p>
+                空は、未知のものの代名詞としてしばしば用いられる。<br>
+                狭義には白融雲層の上に広がる空間を指し、そこは人間のいるべき空間ではないとされている。
+                広義には自身の上に広がる空間や未知の領域そのものを指す。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>「海」</summary>
+              <div class="accordion-body">
+              <p>
+                特に記載のない限り中央海を意味するが、稀に大陸外洋を指すこともある。<br>
+                海には極めて高濃度の融晶が溶け込んでおり、生命体は確認されていない。現段階では小さなアノマリーがしばしば水面から顔を覗かせるのみである。
+                洋上の船舶は余程特殊な処理を行わない限り白融雲層を超える融晶濃度に耐え切れないため、海上交通手段は非常に稀である。<br>
+                因みに、大陸の海岸線はこの海洋侵蝕によって年1mm程のペースで後退している。直ちに大陸が消失するような事態にはならないが、対策を講じなければいずれ取り返しがつかなくなってしまう。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>「鳥」</summary>
+              <div class="accordion-body">
+              <p>
+                鳥は、不吉、異常、波乱の兆しとして認識されている。<br>
+                往々にしてプランク値の高い場所、或いはこれから高くなる場所に出現するこの飛行生命体は、肉体的な強度こそ低いものの歪曲した空間の影響を受けずに生存が可能である。
+                情報元が確認できない資料の中では断層から現れたと記載されている事があり、その生態は謎に包まれている。<br>
+                発見した場合は警戒を怠らず、計器類に注意しながらその場を離れること。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>今日は晴れ</summary>
+              <div class="accordion-body">
+              <p>
+                特に内陸に位置するカレオンやブエルなどを除いた大陸の多くの地域では白融雲層が分厚く、晴れの日が少ない。
+                そのため雲の様子や薄暗さを表す言葉が多く、青空や日差しは畏敬の念を抱かれている。<br>
+                また標識や看板の類も目を惹くために光学系アーツや電飾を施されていることが多く、電力インフラの整った都市内では昼夜問わず煌びやかな人工の光が灯っている。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>雨</summary>
+              <div class="accordion-body">
+              <p>
+                白融雲層から落下する雨粒には融晶が含まれている場合があり、髪の毛や素肌に触れると恒常侵蝕を生じさせる場合がある。
+                これを防ぐため都市内外問わず耐蝕装備のフードを着用する人々が多い。
+                なお、長時間のフードの着用は頭頂部の脱毛に繋がるとする説が存在するが、学術連は特定の見解を示していない。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>北の悪魔</summary>
+              <div class="accordion-body">
+              <p>
+                巨王"ミストレス"を揶揄する言葉。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>金色の王</summary>
+              <div class="accordion-body">
+              <p>
+                ハルシュに伝わっていた獅子の王の伝説。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>砕王の眼</summary>
+              <div class="accordion-body">
+              <p>
+                巨王"アレス"の伝承をもとに作られた比喩。
+                予定調和をかき乱すものとして用いられる。
+              </p>
+              </div>
+            </details>
+            <details>
+              <summary>ブリキ野郎</summary>
+              <div class="accordion-body">
+              <p>
+                旧シエルの軍人を指した蔑称。
+                言葉遣いの荒い者は頻繫に口にする単語だが、良識ある人間はまず用いない。<br>
+                このような語にのせられてトラブルを起こさないように。
+              </p>
+              </div>
+            </details>
+            
+          </div>
+          <div class="accordion-stack" id="words-d" data-stack-title="ANOMALY">
+            <details><summary>アノマリー</summary>
+              <div class="accordion-body">
+              <p>
+                広義では「変なもの」や「敵」など自分に相対する、または見慣れない異物を指し、一般名詞としての狭義ではたびたび観測される異常性存在を意味する。
+                この項では後者に関して説明する。<br>
+                侵蝕性同位体とも呼ばれ、壊晶の影響を強く受けた生命のなれの果てであるとされているが、詳細は不明。例外はあるが総じて敵対的であり、特命の無い限り発見次第撃破する事が推奨される。
+                移動を行わない無機物のような固定オブジェクトと生物に似た挙動を行うオブジェクトに大別されるが、以降は特に記載のない限り疑似生物オブジェクトに関して記述する。<br>
+                =====<br>
+                また、「かれら」は人工物を発見するとそれに向かって移動する性質を持つ。これが何を意味するかは分からないが、「かれら」をおびき寄せたくないなら高い建造物は避けたほうがいいだろう。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王</summary>
+              <div class="accordion-body">
+              <p>
+                特殊な力を持った特に強大なアノマリー。総じて全長が一般的なアノマリーよりも大きく特殊な固有術式を所持しており、撃破が困難である。
+                存在するだけで周囲に活性侵蝕や壊晶汚染を撒き散らし、個体によっては<span>分化子体</span>と呼ばれる眷属のようなものも展開する。
+                この分化子体の軍勢の奥に佇立する様がまるで戦列歩兵時代の将軍か王のようであったことから、「巨王」と呼ばれるようになったと伝えられている。
+                独自の軍隊を持ち得る性質上どのような個体でも観測された瞬間から戦略級の脅威とみなされ、ナンバリングと大陸各勢力との情報共有、周辺勢力の最優先撃破目標への設定が行われる。<br>
+                現在はその数を減らしているものの、依然として3体が健在であり、4体が現状不明である。新しい巨王が顕現している可能性も否定できないため、探査員、連絡員は巨王の可能性があるものを発見した際は直ちに報告書を提出すること。
+              </p>
+              </div>
+            </details>
+            <details><summary>バリアント</summary>
+              <div class="accordion-body">
+              <p>
+                非常にありふれたアノマリー。主に人型の空間の歪みとして観測され、目視可能。ただし一定距離以内にヒトが存在しない場合は非常に緩やかな歪曲空間として振る舞い、観測が非常に困難になる。<br>
+                人が侵蝕によって死亡した場合にバリアントに転化すると考えられているが、具体的な相関関係は不明。
+                また、バリアントは一般的なアノマリーとは異なり発生した場所に留まる性質がある。
+              </p>
+              </div>
+            </details>
+            <details><summary>レッドライト</summary>
+              <div class="accordion-body">
+              <p>
+                ありふれたアノマリー。赤い光
+              </div>
+            </details>
+            <details><summary>スワンプマン</summary>
+              <div class="accordion-body">
+              <p>
+                大陸各地で見られるアノマリー。捕食した対象の体構造を模倣する性質を持ち、人に擬態することが可能。
+              </p>
+              </div>
+            </details>
+            <details><summary>聖歌隊 / クワイア</summary>
+              <div class="accordion-body">
+              <p>
+                西方過負荷領界から襲来する敵性アノマリー。巨王&quot;ハルファス&quot;の分化子体。<br>
+                重度の形態異常を発症したヒトに酷似しているが、その頭部は存在しない。暗青灰色の凹凸のある硬質な体表で、各所に析出した壊晶が見られる。
+                移動にはその2～4本の人型の脚を用いて歩行する。10体程度の集団で行動し、ある程度の組織的な行動も行う。<br>
+                声を媒体とした、非常に高い致死性を持つアーツを使用する。遠吠えの予備動作に十分注意して慎重に行動すること。
+              </p>
+              </div>
+            </details>
+            <details><summary>融合体</summary>
+              <div class="accordion-body">
+              <p>
+                東方過負荷領界から襲来する敵性アノマリー。巨王&quot;ゲベート&quot;の分化子体。<br>
+                ヒトの骸骨のような40～50m程度の体躯を持ち、頭に相当する部分を破壊すると活動を停止する。移動時は浮遊している。
+                周囲の物体を自身の表面に付着させる性質がある。放っておくと都市すべてを取り込んでしまい撃破が困難になるため、境界壁以東での早期撃破が望ましい。<br>
+                目標を発見次第周囲に「骸布」と呼ばれる灰色のぼろきれを展開し、遠距離アーツで高威力の攻撃を行う。
+                また発見した目標が多い場合は追加の「骸布」を展開し、一定時間の詠唱後に自信を中心に広範囲の褶曲攻撃を行う。<br>
+                単体でも極めて危険性が高いため発見した場合は速やかに身を隠し、近隣のリガーレに通報を行うこと。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;ハルファス&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                西方過負荷領界に存在する巨王。聖歌隊を生み出していると考えられる。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;ゲベート&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                東方過負荷領界に存在する巨王。融合体を生み出していると考えられる。
+                長距離砲撃能力があるとみられる。
+                5983年に2秒間の観測に成功したが、直後に観測員が消失した。<br>
+                頭からすっぽりと覆うぼろきれを纏った人型の体を持ち、周囲には「骸布」が浮遊している。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;ミストレス&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                ウルティモ帝国の北部に封印されている巨王。複数の浮遊する無機物の身体を持つ。<br>
+                現状唯一人類がコミュニケーションを取れるアノマリーであり、積極的な攻撃を行わない。
+                アークトゥルス、フレスランド第一機動旅団、第三機械旅団、第四施設旅団が共同で封印の保全を行っている。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;ヴィラネル&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                中央海に存在する巨王。半透明の海洋生物のような体と長いひげを持ち、空を飛ぶ。
+                記録不足のため詳細は不明。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;ハイウォーカー&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                6453年にハルシュ南沖合に自然顕現した巨王。極めて巨大な人型の身体を持ち、広範囲に活性侵蝕を撒き散らし続けた。<br>
+                旧シエルの都市観測台の記載によれば全高は推定12000mであり、これは観測史上類を見ないサイズである。
+                6454年にシエルとハルシュによって討伐された。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;プレイグ&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                ブエルの南に存在する巨王。サントゥールを生み出していると考えられるが詳細不明。
+              </p>
+              </div>
+            </details>
+            <details><summary>巨王&quot;カペラ&quot;</summary>
+              <div class="accordion-body">
+              <p>
+                ==========<br>
+                 <br>
+                秘匿記録<br>
+                 <br>
+                ==========<br>
+              </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+    </div>
+    </section>
+    </main>
+    <!--↓これは注釈用のdiv。消すな-->
+    <div class="note-popover" data-note-popover aria-hidden="true"></div>
+
+  <footer class="site-footer">
+    <p>project goat</p>
+    <small>producted by FOLKLORE entertainment. concept official site, online database.</small>
+  </footer>
+
+      <!-- Put your script after the HTML -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<!-- ScrollSmoother requires ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
+
+<script> 
+ document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger,ScrollSmoother,CustomEase)
+  // gsap code here!
+ });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

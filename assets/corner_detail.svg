@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 192 192" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,0,-1132)">
+        <g id="アートボード2" transform="matrix(1.505686,0,0,1.505686,1264.776026,-573.189106)">
+            <rect x="-840" y="1132.5" width="127.5" height="127.5" style="fill:none;"/>
+            <clipPath id="_clip1">
+                <rect x="-840" y="1132.5" width="127.5" height="127.5"/>
+            </clipPath>
+            <g clip-path="url(#_clip1)">
+                <g id="レイヤー2" transform="matrix(0.664149,0,0,0.664149,-840,380.683093)">
+                    <g transform="matrix(1,0,0,0.866667,15,176.533333)">
+                        <rect x="6" y="1144" width="3" height="180"/>
+                    </g>
+                    <g transform="matrix(0.866648,0,0,1,25.600223,15)">
+                        <rect x="12" y="1138" width="179.975" height="3"/>
+                    </g>
+                    <g transform="matrix(1,0,0,0.6,0,452.8)">
+                        <rect x="21" y="1132" width="3" height="15"/>
+                    </g>
+                    <g transform="matrix(0.6,0,0,1,0,0)">
+                        <rect x="0" y="1153" width="15" height="3"/>
+                    </g>
+                    <rect x="18" y="1153" width="9" height="3"/>
+                    <rect x="21" y="1150" width="3" height="9"/>
+                    <path d="M36,1168L125.902,1257.902" style="fill:none;stroke:black;stroke-width:1.5px;"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

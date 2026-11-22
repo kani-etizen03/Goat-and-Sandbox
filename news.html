@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>project goat | NEWS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- 共通ヘッダー -->
+  <header class="site-header" data-header>
+   <div class="header-logo">
+        <img src="assets/project_goat_logo.svg">
+   </div>
+    <button class="menu-button" type="button" data-menu-button aria-label="メニューを開く"><span></span><span></span></button>
+    <nav class="site-nav" data-nav>
+      <a href="index.html">TOP</a>
+      <a class="is-current" href="news.html">NEWS</a>
+      <a href="database.html">DATABASE</a>
+      <a href="special.html">SPECIAL</a>
+    </nav>
+  </header>
+
+
+
+
+  <main class="page-main">
+    <!-- ==================================================
+      NEWSページ
+      お知らせを追加する時は article をコピーして日付、カテゴリ、本文を編集します。
+    =================================================== -->
+  <div id="splash-square">
+    <div class="loader-square" aria-hidden="true">
+      <div class="loader-box-center"></div>
+      <div class="loader-box"></div>
+      <div class="loader-box"></div>
+      <div class="loader-box"></div>
+      <div class="loader-box"></div>
+    </div>
+  </div>
+
+    <div class="main-content">
+    <section class="section page-section">
+      <div class="section-heading">
+        <h1>NEWS</h1>
+        <p class="eyebrow">LATEST TRANSMISSION</p>
+      </div>
+      <div class="news-list">
+        <article>
+          <time datetime="2026-05-18">2026.07.05</time>
+          <span>WORLD</span>
+          <a href="#">データベースページのデザインを更新。</a>
+        </article>
+        <article>
+          <time datetime="2026-05-18">2026.06.23</time>
+          <span>WORLD</span>
+          <a href="#">トップページのデザインを更新。</a>
+        </article>
+        <article>
+          <time datetime="2026-04-02">2026.06.21</time>
+          <span>CHARACTER</span>
+          <a href="#">主要人物3名のプロフィールを更新。</a>
+        </article>
+        <article>
+          <time datetime="2026-06-21">2026.06.21</time>
+          <span>INFO</span>
+          <a href="#">公式ティザーサイトの開発を開始。</a>
+        </article>
+        
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>project goat</p>
+    <small>producted by FOLKLORE entertainment. concept official site, online database.</small>
+  </footer>
+
+        <!-- Put your script after the HTML -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<!-- ScrollSmoother requires ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
+
+<script> 
+ document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger,ScrollSmoother,CustomEase)
+  // gsap code here!
+ });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT GOAT | TOP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ==================================================
+    共通ヘッダー
+    PCでは上部タブ、モバイルでは右上メニューとして表示されます。
+  =================================================== -->
+  <header class="site-header" data-header>
+   <div class="header-logo">
+        <img src="assets/project_goat_logo.svg">
+   </div>
+    <button class="menu-button" type="button" data-menu-button aria-label="メニューを開く">
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-nav" data-nav>
+      <a class="is-current" href="index.html">TOP</a>
+      <a href="news.html">NEWS</a>
+      <a href="database.html">DATABASE</a>
+      <a href="special.html">SPECIAL</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================================================
+      トップ / キービジュアル
+      ゲームタイトル、キャッチコピー、発売情報を編集する場所です。
+    =================================================== -->
+    <div id="splash">
+      <img src="assets/logo_bk.svg" alt="logo">
+    </div>
+    <section class="hero" id="top">
+
+        <div class="corner-top-left"></div>
+        <div class="corner-top-right"></div>
+        <div class="corner-bottom-left"></div>
+        <div class="corner-bottom-right"></div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <img src="assets/n_026.png" alt="title visual">
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">OFFICIAL SITE / DATABASE</p>
+
+        <div class="top-logo">
+         <img src="assets/logo_bk.svg" alt="ロゴ">
+        </div>
+        <p class="hero-lead">巡礼と、追悼の旅。<br>答えを探し求める探求者の物語。</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="database.html">OPEN DATABASE</a>
+          <a class="ghost-link" href="news.html">LATEST NEWS</a>
+        </div>
+      </div>
+      <!-- ==========================廃止予定===================
+      <aside class="hero-status" aria-label="発売情報">
+        <span>STATUS</span>
+        <strong>COMING 3027</strong>
+        <small>PlayStadio 1324 / Xbot 720 / PC</small>
+      </aside>
+    ============================================================-->
+    </section>
+  <section class="top-page"aria-label="トップページ概要">
+
+   <div class="toppage-visual">
+        <div class="corner-top-left"></div>
+        <div class="corner-top-right"></div>
+        <div class="corner-bottom-left"></div>
+        <div class="corner-bottom-right"></div>
+
+      <img src="assets/n_025.png"alt="トップページビジュアル">
+
+   <div class="visual-label visual-label-top">
+          <span class="label-en">TRANSMISSION / 01</span>
+          <span class="label-jp">観測記録</span>
+   </div>
+
+   <div class="visual-label visual-label-bottom">
+          <span class="label-en">ARCHIVE : GOAT_WORLD_SURFACE</span>
+          <span class="label-en">siel=ultimo large_fault</span>
+        </div>
+   </div>
+    <!-- ==================================================
+      ニュースプレビュー
+      NEWSページの先頭数件を見せる欄です。追加や差し替えは article を編集します。
+    =================================================== -->
+
+     <section class="section top-news" id="news-preview" aria-labelledby="news-preview-title">
+        <div class="corner-top-right"></div>
+        <div class="corner-bottom-right"></div>
+       <div class="top-section-heading">
+         <p class="eyebrow">LATEST TRANSMISSION</p>
+         <h2 id="news-preview-title">NEWS PREVIEW</h2>
+       </div>
+
+       <div class="news-list compact-list">
+         <article>
+           <time datetime="2026-06-21">2026.06.21</time>
+           <span>INFO</span>
+           <a href="news.html">公式ティザーサイトを公開しました。</a>
+         </article><!--
+         <article>
+           <time datetime="2026-05-18">2026.05.18</time>
+           <span>WORLD</span>
+           <a href="news.html">北方空域「ラスティ・レイヤー」の調査ログを追加。</a>
+         </article>
+         <article>
+           <time datetime="2026-04-02">2026.04.02</time>
+           <span>CHARACTER</span>
+           <a href="news.html">主要人物3名のプロフィールを更新しました。</a> -->
+         </article>
+       </div>
+
+       <p class="more-link"><a href="news.html">VIEW ALL NEWS</a></p>
+     </section>
+
+    <section id="decoration">
+      <div class="top-deco">
+      </div>
+    </section>
+</section>
+     
+    <div class="main-content">
+        <!-- ==================================================
+      トップ用キャラクター紹介
+      2人分の人物名、立ち絵、短い紹介文をHTMLで直接編集できます。
+     =================================================== -->
+
+<!--廃止保留中。流石にさみしいので何か入れようと思う。
+
+
+     <section class="section" id="character-section" aria-labelledby="top-character-title">
+      <div class="corner-top-left"></div>
+      <div class="corner-top-right"></div>
+
+       <div class="top-section-heading">
+         <p class="eyebrow">PERSONNEL FILE</p>
+         <h2 id="top-character-title">CHARACTER</h2>
+       </div>
+
+       <div class="top-character-grid">
+         <article class="top-character-card">
+           <img class="standing-portrait" src="assets/ruin_front.png" alt="ruin 立ち絵">
+           <div>
+             <p class="eyebrow">ARTS CASTER / LEADER</p>
+             <h5>ルイン</h5>
+             <p>廃墟で目覚めた少女。自らの過去を探し、旅を始める。</p>
+           </div>
+         </article>
+
+         <article class="top-character-card">
+           <img class="standing-portrait" src="assets/alfirk_front.png" alt="Alfirk 立ち絵">
+           <div>
+             <p class="eyebrow">ASSAILANT / AIDE</p>
+             <h5>アルフィー</h5>
+             <p>サテローダル組合所属の遼遠探査員。現実的な視点と豊富な経験、高い戦闘能力を持つ。</p>
+           </div>
+         </article>
+       </div>
+     </section>
+    -->
+     </div>
+  </main>
+
+  <!-- ==================================================
+    共通フッター
+  =================================================== -->
+  <footer class="site-footer">
+    <p>project goat</p>
+    <small>producted by FOLKLORE entertainment. concept official site, online database.</small>
+  </footer>
+
+      <!-- Put your script after the HTML -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+<!-- ScrollSmoother requires ScrollTrigger -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/CustomEase.min.js"></script>
+
+<script> 
+ document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger,ScrollSmoother,CustomEase)
+  // gsap code here!
+ });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>
