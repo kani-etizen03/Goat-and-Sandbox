@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- 共通ヘッダー -->
   <header class="site-header" data-header>
    <div class="header-logo">
         <img src="assets/project_goat_logo.svg">
@@ -32,8 +31,7 @@
     </div>
   </div>
     <!-- ==================================================
-      DATABASEページ
-      大カテゴリの切り替えはCSSで行い、アコーディオンはdetails/summaryで作っています。
+      DATABASE
     =================================================== -->
     <section class="section page-section database-page">
       <div class="section-heading">
@@ -64,7 +62,6 @@
 
         <!-- ==================================================
           NATION
-          国家資料。カテゴリチップとアコーディオン本文を編集します。
         =================================================== -->
         <section class="db-panel panel-nation">
           <div class="archive-header">
@@ -82,8 +79,6 @@
             <aside class="int-map-shell" data-int-map>
               <!--
                 int-map / NATION panel
-                n_map.pngを背景に、HTML内のアイコンボタンを座標指定で重ねています。
-                座標は --x と --y を%で調整します。
               -->
               <div class="int-map">
                 <button class="int-map-close" type="button" data-int-map-close aria-label="地図を閉じる">×</button>
@@ -95,15 +90,15 @@
                 <div class="int-map-scroll" data-map-scroll>
                   <div class="int-map-canvas" data-map-canvas>
                     <img src="assets/n_map.png" alt="interactive map background">
-                    <!-- icon 01: 丸 / NATIONの1番目のアコーディオン nation-map-01 にリンク -->
+                    <!-- icon01丸 nation-map-01 -->
                     <button class="map-icon map-icon-circle" type="button" data-map-point="point-ciel" data-map-panel="nation" data-map-target="nation-map-01" style="--x: 37%; --y: 38%;" aria-label="NATION icon 01"></button>
-                    <!-- icon 02: 三角 / NATIONの2番目のアコーディオン nation-map-02 にリンク -->
+                    <!-- icon02三角 nation-map-02 -->
                     <button class="map-icon map-icon-triangle" type="button" data-map-point="point-ulheria" data-map-panel="nation" data-map-target="nation-map-02" style="--x: 48%; --y: 34%;" aria-label="NATION icon 02"></button>
-                    <!-- icon 03: 四角 / NATIONの3番目のアコーディオン nation-map-03 にリンク -->
+                    <!-- icon03四角 nation-map-03 -->
                     <button class="map-icon map-icon-square" type="button" data-map-point="point-shemia" data-map-panel="nation" data-map-target="nation-map-03" style="--x: 62%; --y: 58%;" aria-label="NATION icon 03"></button>
-                    <!-- icon 04: 五角形 / GEOGRAPHYの1番目のアコーディオン geo-map-01 にリンク -->
+                    <!-- icon04五角形 geo-map-01 -->
                     <button class="map-icon map-icon-pentagon" type="button" data-map-point="point-city" data-map-panel="geography" data-map-target="geo-map-01" style="--x: 35%; --y: 67%;" aria-label="GEOGRAPHY icon 01"></button>
-                    <!-- icon 05: 六角形 / GEOGRAPHYの3番目のアコーディオン geo-map-02 にリンク -->
+                    <!-- icon05六角形 geo-map-02 -->
                     <button class="map-icon map-icon-hexagon" type="button" data-map-point="point-canopy" data-map-panel="geography" data-map-target="geo-map-02" style="--x: 72%; --y: 46%;" aria-label="GEOGRAPHY icon 02"></button>
                     <button class="map-icon map-icon-4-1" type="button" data-map-point="point-ns-elensia" data-map-panel="geography" data-map-target="geo-map-03" style="--x: 25%; --y: 12%;" aria-label="GEOGRAPHY icon 03">
                       <img src="assets/map_icon_4.1.svg">
@@ -113,7 +108,6 @@
               </div>
             </aside>
           <div class="accordion-container">
-            <!-- accordion-contanierはaccordion-stackをうまく並べるための大枠です-->
           
           <div class="accordion-stack" id="nation-a" data-stack-title="REPUBLIC">
             <details id="nation-map-01">
@@ -321,8 +315,6 @@
 
         <!-- ==================================================
           CHARACTERS
-          PCは矢印リンク、モバイルは横スワイプでプロフィールを切り替えます。
-          立ち絵はクリック/タップで前面と背面が切り替わります。
         =================================================== -->
         <section class="db-panel panel-characters">
           <div class="archive-header">
@@ -574,7 +566,6 @@
             <aside class="int-map-shell" data-int-map>
               <!--
                 int-map / GEOGRAPHY panel
-                このパネルではGEOGRAPHYに紐づくアイコンだけが黄色、NATIONに紐づくアイコンはグレーになります。
               -->
               <div class="int-map">
                 <button class="int-map-close" type="button" data-int-map-close aria-label="地図を閉じる">×</button>
@@ -690,7 +681,7 @@
               <summary>オーカーサンドランド</summary>
               <div class="accordion-body">
               <p>
-                ブエルに広がる広大な砂漠。
+                カルディン山脈以南に広がる広大な砂漠。
                 非常に乾燥しており、壊晶を含んだ砂嵐が頻繫に発生する。
               </p>
               </div>
@@ -701,7 +692,7 @@
               <p>
                 大陸北部に広がる広大な凍土。
                 厳しい寒さにより人もアノマリーも少なく、自然環境との戦いになる。
-                エリシンジムを越えた「最北の地」には巨王&quot;ミストレス&quot;が封印されており、周囲100km単位でアークトゥルス、フレスランド第一機動旅団、第三機械旅団、第四施設旅団が共同で封鎖している。
+                エリシンジムを越えた「極北の地」には巨王&quot;ミストレス&quot;が封印されており、周囲100km単位でアークトゥルス、フレスランド第1機動旅団、第3機械旅団、第2施設旅団が共同で封鎖している。
               </p>
               </div>
             </details>
@@ -712,7 +703,7 @@
               <div class="accordion-body">
               <p>大陸の東方、西方、南方にそれぞれ存在する未知の領域。壊晶濃度が非常に高く、アノマリーの巣窟である。<br>
                 境界壁を越えた先の沖合に広がる東方過負荷領界には巨王ゲベートとその分化子体である融合体達、シエル連邦の沖合の先に広がる西方過負荷領界には巨王ハルファスとその分化子体である聖歌隊が存在し、探査を阻んでいる。<br>
-                ブエル連合のさらに南部、シートンランドを覆う南方過負荷領界には特に敵対的なアノマリーは少ないが、その代わりに全域が極度にプランク値が高い。
+                ブエル連合のさらに南部、シートンランドを覆う南方過負荷領界には特に敵対的なアノマリーは少ないが、その代わりに全域が極度にホーキング値が高い。
                 仮想座標観測錨無しでは侵入は自殺行為だといえる。
               </p>
               </div>
@@ -821,7 +812,7 @@
               <div class="accordion-body">
               <p>
                 ノーブルダル東に建設された大型固定砲台。
-                軌道帯に
+                軌道帯の掃討を目的として建設されたが、目立った功績はない。
               </p>
             </div>
             </details>
@@ -851,7 +842,9 @@
             </details>
             <details><summary>これはHAND WEAPONの三番目の項目のsummaryです</summary>
               <div class="accordion-body">
-              <p>これはHAND WEAPONの三番目の項目の本文です。物語上の意味や象徴性を記載します。</p>
+              <p>
+
+              </p>
             </div>
             </details>
            </div>
@@ -933,7 +926,7 @@
             <details>
               <summary>きれいな機密文書</summary>
               <div class="accordion-body">
-              <p>きれいに保管されていた機密文書ファイル。折り目がくたびれており、持ち主が何度も開き直した事が分かる。<br>
+              <p>きれいに保管されていた文書ファイル。折り目がくたびれており、持ち主が何度も開き直した事が分かる。<br>
               =====<br>
               ────探査員志願者、ルインは精密検査の結果、スワンプマンに該当する可能性が高い事が判明した。彼女の強力なアーツと類稀な戦闘技術を加味して、遼遠探査員のアルフィーにこれの執行監督を任命する。<br>
                 任務期間は進捗に応じて自動的に延長され、成果報告はこの通達後目標の存在が検知されないことによってのみ行われる。
@@ -1129,7 +1122,7 @@
               <p>
                 壊晶の持つ形態の一つ。壊晶が大気中に細かい流体として存在している状態を指す。<br>
                 基本的には人が吸い込んでもそこに含まれる壊晶は極々微量であるため問題ないが、体内に蓄積された壊晶は自然に排出されないため、継続的に融晶濃度が高い空間で生活していると褶曲障害を引き起こす可能性がある。<br>
-                融晶は地上から高度1800～3000mに集まり分厚い雲を形成する性質がある。これを<span>白融雲層</span>といい、内部は高い融晶濃度によって常に活性侵蝕が発生している。
+                融晶は高度1800～3000mに集まり分厚い雲を形成する性質がある。この雲の層を<span>白融雲層</span>といい、内部は高い融晶濃度によって常に活性侵蝕が発生している。
               </p>
               </div>
             </details>
@@ -1154,7 +1147,7 @@
             <details>
               <summary>プランク値</summary>
               <div class="accordion-body">
-              <p>空間の歪度を示す値。単位はhg。0で全く歪んでいない状態を示し、数値が増加する程空間が歪んでいることを示す。<br>
+              <p>空間の歪度を示す値。単位はpk。0で全く歪んでいない状態を示し、数値が増加する程空間が歪んでいることを示す。<br>
                 一般的に0.13～0.2までが人間が許容できる空間歪度だとされ、それを超えると様々な健康被害が発生する。0.5では急性褶曲障害を発症し、0.7では恒久的な運動機能の喪失、1.2に達すると人間は即死する。<br>
                 概ね融晶濃度と比例して上昇する傾向があり、壊晶との関連性について研究が進められている。</p>
               </div>
@@ -1163,7 +1156,7 @@
               <summary>褶曲障害</summary>
               <div class="accordion-body">
                 <p>歪曲した空間や壊晶によって引き起こされる健康障害。急性のものと慢性のものが存在する。<br>
-                  軽度であれば感覚障害程度で済むが、悪化するにつれて四肢の麻痺や遺伝子障害、形態異常などが発生する。壊晶との接触、高プランク値の空間への滞在で症状が進行するため、発症した場合は壊晶と触れないように気を付ける必要がある。
+                  軽度であれば感覚障害程度で済むが、悪化するにつれて四肢の麻痺や遺伝子障害、形態異常などが発生する。壊晶との接触、高ホーキング値の空間への滞在で症状が進行するため、発症した場合は壊晶と触れないように気を付ける必要がある。
                   症状が進行し続けるとバリアントに転化するとされているが、はっきりと確認した事例は存在しない。
                 </p>
               </div>
@@ -1273,6 +1266,15 @@
               </p>
               </div>
             </details>
+            <details>
+              <summary>多機能端末</summary>
+              <div class="accordion-body">
+              <p>
+                様々な機能を備えた携帯情報端末。<br>
+                分類法は様々だが、ここでは情報閲覧、手帳機能以外に演算処理や測距機能、短距離通信などの機能を有したものを指す。
+              </p>
+              </div>
+            </details>
           </div>
           <div class="accordion-stack" id="words-b" data-stack-title="WORLD VIEW">
             <details><summary>リガーレ</summary>
@@ -1303,7 +1305,7 @@
               </p>
             </div>
             </details>
-            <details><summary>運送屋 / キャラバン</summary>
+            <details><summary>運送屋 / キャリアージ</summary>
               <div class="accordion-body">
               <p>
                 装脚車両などを用いて都市間で物資の輸送を行い、それによって生計を立てる者を指す。<br>
@@ -1311,7 +1313,7 @@
               </p>
             </div>
             </details>
-            <details><summary>回収屋 / サッコ</summary>
+            <details><summary>回収屋 / ジャンカー</summary>
               <div class="accordion-body">
               <p>
                 装脚車両などを用いて廃都市などから物資の回収を行う者を指す。<br>
@@ -1320,27 +1322,11 @@
               </p>
             </div>
             </details>
-            </details>
-            <details><summary>機械屋 / </summary>
-              <div class="accordion-body">
-              <p>
-                機械に関するスペシャリスト。リガーレの中で武器の制作や改造を主に請け負っている。
-              </p>
-            </div>
-            </details>
-            <details><summary>傭兵</summary>
+            <details><summary>傭兵 / マーセナリー</summary>
               <div class="accordion-body">
               <p>
                 金や物資と引き換えに武力を提供する者を指す。<br>
                 戦闘員は非常に強力な武力の形だが、リガーレの決定がなければ武力行使は許されない。そのためこうした柔軟に展開できる戦力の需要は多く、運送屋や権力者を中心に広く利用されている。
-              </p>
-            </div>
-            </details>
-            <details><summary>連絡員 / イーピストラ</summary>
-              <div class="accordion-body">
-              <p>
-                リガーレ内の役職の一つであり、リガーレ間の連絡を担う。<br>
-                文書の配送、各地の情勢の伝達が主な仕事で、単独又は少人数で行動する。野外生存術はもちろんだが、その性質上山賊などに標的にされることも多いため、様々な交渉術や万が一のための戦闘技術も求められる。
               </p>
             </div>
             </details>
@@ -1351,6 +1337,22 @@
                 アノマリーの撃退や賊の排除など、対外的な武力行使を行うリガーレの主戦力。軍隊的な規律を重んじ、30人程度の小隊規模で行動することが多い。
                 ただ、近年ではアノマリーよりも人間を相手取ることが多いようだ。
                 アーツの制御技術か近接戦闘術のどちらかを備えていることが必要。また隊長には別個に指揮能力や人事管理能力など多岐に渡る能力が求められる。
+              </p>
+            </div>
+            </details>
+            <details><summary>捕縛員 / ヴィジレス</summary>
+              <div class="accordion-body">
+              <p>
+                リガーレ内の役職の一つであり、都市内部の治安維持を担う。<br>
+                規約違反を感知した
+              </p>
+            </div>
+            </details>
+            <details><summary>連絡員 / イーピストラ</summary>
+              <div class="accordion-body">
+              <p>
+                リガーレ内の役職の一つであり、リガーレ間の連絡を担う。<br>
+                文書の配送、各地の情勢の伝達が主な仕事で、単独又は少人数で行動する。野外生存術はもちろんだが、その性質上山賊などに標的にされることも多いため、様々な交渉術や万が一のための戦闘技術も求められる。
               </p>
             </div>
             </details>
@@ -1365,6 +1367,13 @@
               </p>
             </div>
             </details>
+            <details><summary>ブリガンド</summary>
+              <div class="accordion-body">
+              <p>
+                文明に属さない野党。
+              </p>
+            </div>
+            </details>
             <details>
               <summary>陸上艦</summary>
               <div class="accordion-body">
@@ -1374,19 +1383,6 @@
                 単独での長期間活動を実現するために独立した生活環境を有しており、乗組員用の大量の備蓄に加え食料プラントや浄水器といった設備も備えている。<br>
                 その目的によって<button class="term" type="button" data-note="高速艦、貨物艦、強襲艦、工廠艦など。詳細は用語集の「陸上艦の区分」を参照。">区分がいくつかに分かれる</button>が、そのどれであっても所有する勢力の権威と資金力の証明になる。
                 私有するには莫大な資金と人材が必要となるが、それでも多くの運送屋にとって自分の陸上艦を持つことは大きな憧れである。
-              </p>
-              </div>
-            </details>
-            <details>
-              <summary>陸上艦の区分</summary>
-              <div class="accordion-body">
-              <p>
-                陸上艦はその目的に応じて大きく6個の区分に分けられる。また陸上艦に関してはその用途や所属に左右されずすべてを艦と呼称する。<br>
-                高速艦
-                探査艦
-                貨物艦
-                強襲艦
-                工廠艦
               </p>
               </div>
             </details>
@@ -1439,8 +1435,8 @@
               <summary>オーロラ</summary>
               <div class="accordion-body">
               <p>
-                極光とも呼ばれるこの光は、プランク値の高い場所に発生する現象の一つである。<br>
-                &quot;遺産&quot;の古い書物や口伝の中では天体の高緯度帯に出現する発光現象だとされているが、現代においては融晶濃度とプランク値が両方高いことを示す危険指標の一つである。
+                極光とも呼ばれるこの光は、ホーキング値の高い場所に発生する現象の一つである。<br>
+                &quot;遺産&quot;の古い書物や口伝の中では天体の高緯度帯に出現する発光現象だとされているが、現代においては融晶濃度とホーキング値が両方高いことを示す危険指標の一つである。
                 主に緑から紫の短波長の可視光と紫外線を放出し、微弱な融晶場の乱れを起こす。
                 オーロラが観測された場合は警戒を怠らず、速やかに防護措置を取ること。
               </p>
@@ -1487,7 +1483,7 @@
               <div class="accordion-body">
               <p>
                 鳥は、不吉、異常、波乱の兆しとして認識されている。<br>
-                往々にしてプランク値の高い場所、或いはこれから高くなる場所に出現するこの飛行生命体は、肉体的な強度こそ低いものの歪曲した空間の影響を受けずに生存が可能である。
+                往々にしてホーキング値の高い場所、或いはこれから高くなる場所に出現するこの飛行生命体は、肉体的な強度こそ低いものの歪曲した空間の影響を受けずに生存が可能である。
                 情報元が確認できない資料の中では断層から現れたと記載されている事があり、その生態は謎に包まれている。<br>
                 発見した場合は警戒を怠らず、計器類に注意しながらその場を離れること。
               </p>
